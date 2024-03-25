@@ -4,6 +4,7 @@ green='\e[0;32m'
 blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
+TOR_VERZIO="13.0.12"
 # # #
 echo -e "${yellow}rc-local setting...${white}"
 echo '[Unit]
@@ -90,7 +91,7 @@ Exec=/usr/bin/brave-browser-stable --incognito
 
 echo -e "${yellow}Tor Browser install...${white}"
 cd /opt
-TOR_VERZIO="13.0.10"
+
 wget https://www.torproject.org/dist/torbrowser/$TOR_VERZIO/tor-browser-linux-x86_64-$TOR_VERZIO.tar.xz
 tar -xvJf tor-browser-*.tar.xz
 rm tor-browser-*.tar.xz
@@ -201,6 +202,29 @@ wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb
 apt-get -f install -y
 rm teamviewer_amd64.deb
+
+echo -e "${yellow}RustDesk? (i/n)${white}"
+read RUSTDESK_INSTALL
+if [ $RUSTDESK_INSTALL = 'i' ]; then
+	echo -e "${yellow}RustDesk install..${white}"
+	cd /usr/local/bin
+	wget https://github.com/rustdesk/rustdesk/releases/download/1.2.3-1/rustdesk-1.2.3-x86_64.AppImage	
+	mv rustdesk-1.2.3-x86_64.AppImage rustdesk
+	chmod +x rustdesk	
+	cd /usr/share/icons
+	wget -O rustdesk.png https://avatars.githubusercontent.com/u/71636191?v=4
+echo "[Desktop Entry]
+Name=RustDesk
+Exec=/usr/local/bin/rustdesk
+Icon=/usr/share/icons/rustdesk.png
+
+Encoding=UTF-8
+ExecutionMode=normal
+Type=Application
+Categories=System;Security;
+MimeType=all/allfiles;
+Enabled=true" > /usr/share/applications/rustdesk.desktop
+fi
 
 echo -e "${yellow}Winbox install...${white}"
 cd /usr/share/icons
