@@ -14,7 +14,7 @@ thunderbird thunderbird-l10n-hu gimp simple-scan gnupg gnupg2 gnupg1 eog zstd im
 gprename gocryptfs mugshot keepassxc nextcloud-desktop tor geany netdiscover sshuttle grub-customizer \
 ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
 gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu onionshare \
-gnome-online-accounts ecryptfs-utils hardinfo
+gnome-online-accounts ecryptfs-utils hardinfo syncthing
 
 Browser:
 - Brave
