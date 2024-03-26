@@ -30,12 +30,13 @@ Office:
 - Standard Notes
 - KeePassXC
 
-Encryption tools:
+Encryption/Secure tools:
 - GnuPG GUI
 - AEScrypt
 - PicoCrypt
 - VeraCrypt
-- onionshare
+- Onionshare
+- Syncthing
 
 Remote support:
 - TeamViewer
