@@ -204,6 +204,17 @@ wget https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-Deb
 dpkg -i veracrypt-1.26.7-Debian-12-amd64.deb
 rm veracrypt-1.26.7-Debian-12-amd64.deb
 apt-get -f install -y
+echo "[Desktop Entry]
+Type=Application
+Name=VeraCrypt
+GenericName=VeraCrypt volume manager
+Comment=Create and mount VeraCrypt encrypted volumes
+Icon=veracrypt
+Exec=/usr/bin/veracrypt %f
+Categories=Office;
+Keywords=encryption,filesystem
+Terminal=false
+MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
 
 echo -e "${yellow}TeamViewer install${white}"
 cd
