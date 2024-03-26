@@ -124,7 +124,7 @@ Icon=/usr/share/icons/Telegram.png
 Encoding=UTF-8
 ExecutionMode=normal
 Type=Application
-Categories=System;Security;
+Categories=Chat;Network;InstantMessaging;Qt;
 Enabled=true" > /usr/share/applications/telegram.desktop
 cd /usr/share/icons
 wget -O Telegram.png https://cdn-icons-png.flaticon.com/512/906/906377.png
@@ -158,8 +158,7 @@ Icon=/usr/share/icons/standard-notes-icon.png
 Encoding=UTF-8
 ExecutionMode=normal
 Type=Application
-Categories=System;Security;
-MimeType=all/allfiles;
+Categories=Office;
 Enabled=true" > /usr/share/applications/standard-notes.desktop
 
 echo -e "${yellow}GnuPG GUI install...${white}"
@@ -177,8 +176,7 @@ Icon=/usr/share/icons/gnupg.png
 Encoding=UTF-8
 ExecutionMode=normal
 Type=Application
-Categories=System;Security;
-MimeType=all/allfiles;
+Categories=Office;
 Enabled=true" > /usr/share/applications/gnupg.desktop
 
 echo -e "${yellow}AEScrypt install...${white}"
@@ -188,25 +186,17 @@ gunzip AESCrypt-GUI-3.11-Linux-x86_64-Install.gz
 chmod +x AESCrypt-GUI-3.11-Linux-x86_64-Install
 ./AESCrypt-GUI-3.11-Linux-x86_64-Install
 rm AESCrypt-GUI-3.11-Linux-x86_64-Install
-
-echo -e "${yellow}PicoCrypt install...${white}"
-cd /usr/share/icons
-wget https://image.pngaaa.com/3/6565003-middle.png
-mv 6565003-middle.png picocrypt.png
-wget https://github.com/HACKERALERT/Picocrypt/releases/download/1.31/Picocrypt.AppImage
-mv Picocrypt.AppImage /usr/local/bin/picocrypt
-chmod +x /usr/local/bin/picocrypt
 echo "[Desktop Entry]
-Name=PicoCrypt
-Exec=/usr/local/bin/picocrypt
-Icon=/usr/share/icons/picocrypt.png
-
 Encoding=UTF-8
+Name=AESCrypt
+Tooltip=Encrypt or Decrypt a file using AESCrypt 
+Comment=Encrypt or Decrypt a file using AESCrypt
+Exec=/usr/bin/aescrypt-gui %f
 ExecutionMode=normal
 Type=Application
-Categories=System;Security;
-MimeType=all/allfiles;
-Enabled=true" > /usr/share/applications/picocrypt.desktop
+Icon=/usr/share/aescrypt/SmallLock.png
+Categories=Office;
+Enabled=true" > /usr/share/applications/AESCrypt.desktop
 
 echo -e "${yellow}VeraCrypt install...${white}"
 cd
@@ -240,8 +230,7 @@ Icon=/usr/share/icons/rustdesk.png
 Encoding=UTF-8
 ExecutionMode=normal
 Type=Application
-Categories=System;Security;
-MimeType=all/allfiles;
+Categories=Application;Network;
 Enabled=true" > /usr/share/applications/rustdesk.desktop
 fi
 
@@ -261,7 +250,6 @@ Encoding=UTF-8
 ExecutionMode=normal
 Type=Application
 Categories=Application;Network;
-MimeType=all/allfiles;
 Enabled=true" > /usr/share/applications/winbox.desktop
 
 apt-get remove --purge firefox-esr -y
