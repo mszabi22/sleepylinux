@@ -110,6 +110,25 @@ cat signal-desktop-keyring.gpg | tee /usr/share/keyrings/signal-desktop-keyring.
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | tee /etc/apt/sources.list.d/signal-xenial.list
 apt update && sudo apt install signal-desktop
 
+echo -e "${yellow}Telegram install...${white}"
+cd /tmp
+wget -O telegram.tar.xz https://telegram.org/dl/desktop/linux
+tar xf telegram.tar.xz
+mv Telegram/Telegram /usr/local/bin
+rm -rf Telegram/
+echo "[Desktop Entry]
+Name=Telegram first start
+Exec=/usr/local/bin/Telegram
+Icon=/usr/share/icons/Telegram.png
+
+Encoding=UTF-8
+ExecutionMode=normal
+Type=Application
+Categories=System;Security;
+Enabled=true" > /usr/share/applications/telegram.desktop
+cd /usr/share/icons
+wget -O Telegram.png https://cdn-icons-png.flaticon.com/512/906/906377.png
+
 echo -e "${yellow}Element client install...${white}"
 cd
 apt install -y apt-transport-https
