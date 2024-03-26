@@ -42,5 +42,7 @@ Remote support:
 
 Config tool:
 - Winbox
+- Active Directory member support
+
 
 
