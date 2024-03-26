@@ -23,6 +23,7 @@ Browser:
 Messengers:
 - Signal
 - Element
+- Telegram
 
 Office:
 - LibreOffice
