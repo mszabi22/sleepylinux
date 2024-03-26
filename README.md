@@ -35,6 +35,7 @@ Encryption tools:
 - AEScrypt
 - PicoCrypt
 - VeraCrypt
+- onionshare
 
 Remote support:
 - TeamViewer
