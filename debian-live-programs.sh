@@ -271,7 +271,6 @@ Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
 
 echo -e "${green}DONE.${white}"
-echo -e "${green}DONE.${white}"
 
 echo "CHECK list:"
 echo "- Lightdm"
