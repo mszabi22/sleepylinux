@@ -18,7 +18,7 @@ gnome-online-accounts ecryptfs-utils hardinfo syncthing
 
 Browser:
 - Brave
-- Tor browser (13.0.12)
+- Tor browser
 
 Messengers:
 - Signal
