@@ -6,6 +6,7 @@
 - timezone=Europe/Budapest
 
 <ins>Added programs:</ins>
+
 mc lshw wireshark network-manager net-tools wget task-xfce-desktop xserver-xorg-core \
 gparted ntfs-3g hfsprogs rsync dosfstools partclone clonezilla sshfs nano calamares calamares-settings-debian \
 sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
