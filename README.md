@@ -36,7 +36,7 @@
 
 <ins>Config tools:</ins>
 - Winbox
-- Active Directory member support
+- Active Directory member support script
 
 <ins>Other added programs:</ins>
 
