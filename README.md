@@ -36,7 +36,6 @@ gnome-online-accounts ecryptfs-utils hardinfo syncthing
 <ins>Encryption/Secure tools:</ins>
 - GnuPG GUI
 - AEScrypt
-- PicoCrypt
 - VeraCrypt
 - Onionshare
 - Syncthing
