@@ -9,6 +9,7 @@
 <ins>Browsers:</ins>
 - Brave
 - Tor browser
+- Firefox ESR
 
 <ins>Messengers:</ins>
 - Signal
