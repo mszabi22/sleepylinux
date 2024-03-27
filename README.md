@@ -1,5 +1,5 @@
 # SleepyLinux is just a customized Debian :)
-<u>Debian 12:</u>
+<ins>Debian 12:</ins>
 - architecture: amd64
 - locales=hu_HU.UTF-8 
 - keyboard-layouts=hu 
