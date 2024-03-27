@@ -48,5 +48,9 @@ Config tool:
 - Winbox
 - Active Directory member support
 
+Method of preparation:
+1. Run debian-live-build.sh
+2. Copy to chroot: debian-live-programs.sh, etc, usr/local/bin
+3. Run debian-live-programs.sh
 
 
