@@ -1,9 +1,9 @@
 # SleepyLinux is just a customized Debian :)
-<ins>Debian 12:</ins>
-- architecture: amd64
-- locales=hu_HU.UTF-8 
-- keyboard-layouts=hu 
-- timezone=Europe/Budapest
+- OS: Debian 12
+- Architecture: amd64
+- Locales=hu_HU.UTF-8 
+- Keyboard-layouts=hu 
+- Timezone=Europe/Budapest
 
 <ins>Added programs:</ins>
 
