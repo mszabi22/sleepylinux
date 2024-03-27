@@ -17,7 +17,7 @@ ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping l
 gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu onionshare \
 gnome-online-accounts ecryptfs-utils hardinfo syncthing
 
-<ins>Browser:</ins>
+<ins>Browsers:</ins>
 - Brave
 - Tor browser
 
@@ -45,7 +45,7 @@ gnome-online-accounts ecryptfs-utils hardinfo syncthing
 - TeamViewer
 - RustDesk
 
-<ins>Config tool:</ins>
+<ins>Config tools:</ins>
 - Winbox
 - Active Directory member support
 
