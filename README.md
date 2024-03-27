@@ -5,17 +5,6 @@
 - Keyboard-layouts=hu 
 - Timezone=Europe/Budapest
 
-<ins>Added programs:</ins>
-
-mc lshw wireshark network-manager net-tools wget task-xfce-desktop xserver-xorg-core \
-gparted ntfs-3g hfsprogs rsync dosfstools partclone clonezilla sshfs nano calamares calamares-settings-debian \
-sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
-firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc \
-thunderbird thunderbird-l10n-hu gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre \
-gprename gocryptfs mugshot keepassxc nextcloud-desktop tor geany netdiscover sshuttle grub-customizer \
-ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
-gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu onionshare \
-gnome-online-accounts ecryptfs-utils hardinfo syncthing
 
 <ins>Browsers:</ins>
 - Brave
@@ -37,6 +26,7 @@ gnome-online-accounts ecryptfs-utils hardinfo syncthing
 - GnuPG GUI
 - AEScrypt
 - VeraCrypt
+- Nextcloud Client
 - Onionshare
 - Syncthing
 
@@ -47,6 +37,15 @@ gnome-online-accounts ecryptfs-utils hardinfo syncthing
 <ins>Config tools:</ins>
 - Winbox
 - Active Directory member support
+
+<ins>Other added programs:</ins>
+
+mc lshw wireshark gparted ntfs-3g hfsprogs partclone clonezilla sshfs nano firmware-iwlwifi\
+firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc thunderbird thunderbird-l10n-hu \
+gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gprename gocryptfs mugshot geany \
+netdiscover sshuttle grub-customizer ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils\
+arping libpam-google-authenticator gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw\
+gnome-online-accounts ecryptfs-utils hardinfo
 
 ## <ins>Method of preparation:</ins>
 1. Run debian-live-build.sh
