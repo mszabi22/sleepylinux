@@ -5,7 +5,7 @@
 - keyboard-layouts=hu 
 - timezone=Europe/Budapest
 
-Added programs:
+<ins>Added programs:</ins>
 mc lshw wireshark network-manager net-tools wget task-xfce-desktop xserver-xorg-core \
 gparted ntfs-3g hfsprogs rsync dosfstools partclone clonezilla sshfs nano calamares calamares-settings-debian \
 sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
@@ -16,23 +16,23 @@ ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping l
 gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu onionshare \
 gnome-online-accounts ecryptfs-utils hardinfo syncthing
 
-Browser:
+<ins>Browser:</ins>
 - Brave
 - Tor browser
 
-Messengers:
+<ins>Messengers:</ins>
 - Signal
 - Element
 - Telegram
 - Viber
 
-Office:
+<ins>Office:</ins>
 - LibreOffice
 - Tutanota
 - Standard Notes
 - KeePassXC
 
-Encryption/Secure tools:
+<ins>Encryption/Secure tools:</ins>
 - GnuPG GUI
 - AEScrypt
 - PicoCrypt
@@ -40,15 +40,15 @@ Encryption/Secure tools:
 - Onionshare
 - Syncthing
 
-Remote support:
+<ins>Remote support:</ins>
 - TeamViewer
 - RustDesk
 
-Config tool:
+<ins>Config tool:</ins>
 - Winbox
 - Active Directory member support
 
-Method of preparation:
+##<ins>Method of preparation:</ins>
 1. Run debian-live-build.sh
 2. Copy to chroot: debian-live-programs.sh, etc, usr/local/bin
 3. Run debian-live-programs.sh
