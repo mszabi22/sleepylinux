@@ -129,6 +129,13 @@ Enabled=true" > /usr/share/applications/telegram.desktop
 cd /usr/share/icons
 wget -O Telegram.png https://cdn-icons-png.flaticon.com/512/906/906377.png
 
+echo -e "${yellow}Viber install...${white}"
+cd /tmp
+wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
+dpkg -i viber.deb
+apt-get -f install -y
+rm -rf viber.deb
+
 echo -e "${yellow}Element client install...${white}"
 cd
 apt install -y apt-transport-https

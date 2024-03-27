@@ -24,6 +24,7 @@ Messengers:
 - Signal
 - Element
 - Telegram
+- Viber
 
 Office:
 - LibreOffice
