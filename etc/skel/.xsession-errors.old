@@ -1,0 +1,32 @@
+Xsession: X session started for oem at 2024. jan. 23., kedd, 07:37:04 CET
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting XAUTHORITY=/home/oem/.Xauthority
+dbus-update-activation-environment: setting XDG_CURRENT_DESKTOP=XFCE
+localuser:oem being added to access control list
+dbus-update-activation-environment: setting XDG_DATA_DIRS=/usr/share/xfce4:/usr/local/share/:/usr/share/
+dbus-update-activation-environment: setting GTK_MODULES=gail:atk-bridge
+dbus-update-activation-environment: setting QT_ACCESSIBILITY=1
+/usr/bin/startxfce4: X server already running on display :0
+/usr/bin/iceauth:  creating new authority file /run/user/1000/ICEauthority
+xfce4-session-Message: 07:37:07.012: SSH authentication agent is already running
+
+(xfwm4:975): xfwm4-WARNING **: 07:37:10.346: Unsupported GL renderer (llvmpipe (LLVM 15.0.6, 256 bits)).
+
+** (xiccd:1028): WARNING **: 07:37:11.691: EDID is empty
+
+** (light-locker:1034): WARNING **: 07:37:12.620: screensaver already running in this session
+
+** (wrapper-2.0:1051): WARNING **: 07:37:14.147: No outputs have backlight property
+
+(xfce4-power-manager:1096): xfce4-power-manager-WARNING **: 07:37:14.548: could not map keysym 1008ffa8 to keycode
+
+
+** (xfce4-power-manager:1096): WARNING **: 07:37:14.624: No outputs have backlight property
+
+(xfce4-power-manager:1096): xfce4-power-manager-WARNING **: 07:37:14.640: Failed to get keyboard max brightness level : GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Az objektum nem létezik a(z) „/org/freedesktop/UPower/KbdBacklight” útvonalon
+blueman-applet 07.37.15 WARNING  PluginManager:151 __load_plugin: Not loading PPPSupport because its conflict has higher priority
+blueman-applet 07.37.15 WARNING  PluginManager:151 __load_plugin: Not loading DhcpClient because its conflict has higher priority
+blueman-applet 07.37.32 WARNING  DiscvManager:119 update_menuitems: warning: Adapter is None
+
+(wrapper-2.0:1327): Gtk-WARNING **: 07:38:06.368: Negative content width -4 (allocation 16, extents 10x10) while allocating gadget (node button, owner PlacesButton)
