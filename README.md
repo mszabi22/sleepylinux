@@ -1,4 +1,4 @@
-# SleepyLive
+# SleepyLinux
 Debian 12:
 - architecture: amd64
 - locales=hu_HU.UTF-8 
