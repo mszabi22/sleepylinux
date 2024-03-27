@@ -14,7 +14,6 @@
 <ins>Messengers:</ins>
 - Signal
 - Element
-- Telegram
 - Viber
 
 <ins>Office:</ins>
