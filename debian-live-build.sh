@@ -1,5 +1,5 @@
 #!/bin/bash
-#2024.01.25.
+# Run this first
 apt-get install live-build
 lb clean
 lb config noauto \
