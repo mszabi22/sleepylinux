@@ -29,6 +29,11 @@ exit 0
 chmod +x /etc/rc.local
 systemctl enable rc-local
 
+echo -e "${yellow}Timezone setting...${white}"
+apt install chrony -y
+timedatectl set-timezone Europe/Budapest
+timedatectl set-ntp on
+
 echo -e "${yellow}Repository setting...${white}"
 echo "deb https://ftp.debian.org/debian/ bookworm contrib main non-free non-free-firmware
 deb https://ftp.debian.org/debian/ bookworm-updates contrib main non-free non-free-firmware
