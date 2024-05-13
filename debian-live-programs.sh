@@ -47,10 +47,10 @@ echo -e "${yellow}Apps install...${white}"
 apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
     firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc \
     thunderbird thunderbird-l10n-hu gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre \
-    gprename gocryptfs mugshot keepassxc nextcloud-desktop tor geany netdiscover sshuttle grub-customizer \
+    gprename gocryptfs mugshot keepassxc tor geany netdiscover sshuttle grub-customizer \
     ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
     gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu onionshare \
-    gnome-online-accounts ecryptfs-utils hardinfo syncthing qrencode
+    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils
     
 modprobe ecryptfs    
 
@@ -121,14 +121,6 @@ wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
 dpkg -i viber.deb
 apt-get -f install -y
 rm -rf viber.deb
-
-echo -e "${yellow}Element client install...${white}"
-cd
-apt install -y apt-transport-https
-wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | tee /etc/apt/sources.list.d/element.list
-apt update
-apt install element-desktop -y
 
 echo -e "${yellow}Tutanota client install...${white}"
 cd /usr/local/bin
@@ -215,28 +207,6 @@ wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb
 apt-get -f install -y
 rm teamviewer_amd64.deb
-
-echo -e "${yellow}RustDesk? (i/n)${white}"
-read RUSTDESK_INSTALL
-if [ $RUSTDESK_INSTALL = 'i' ]; then
-	echo -e "${yellow}RustDesk install..${white}"
-	cd /usr/local/bin
-	wget https://github.com/rustdesk/rustdesk/releases/download/1.2.3-1/rustdesk-1.2.3-x86_64.AppImage	
-	mv rustdesk-1.2.3-x86_64.AppImage rustdesk
-	chmod +x rustdesk	
-	cd /usr/share/icons
-	wget -O rustdesk.png https://avatars.githubusercontent.com/u/71636191?v=4
-echo "[Desktop Entry]
-Name=RustDesk
-Exec=/usr/local/bin/rustdesk
-Icon=/usr/share/icons/rustdesk.png
-
-Encoding=UTF-8
-ExecutionMode=normal
-Type=Application
-Categories=Application;Network;
-Enabled=true" > /usr/share/applications/rustdesk.desktop
-fi
 
 echo -e "${yellow}Winbox install...${white}"
 cd /usr/share/icons
