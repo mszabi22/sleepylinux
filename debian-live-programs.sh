@@ -50,7 +50,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     gprename gocryptfs mugshot keepassxc tor geany netdiscover sshuttle grub-customizer \
     ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
     gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu onionshare \
-    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils
+    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious
     
 modprobe ecryptfs    
 
@@ -96,7 +96,6 @@ Exec=/usr/bin/brave-browser-stable --incognito
 
 echo -e "${yellow}Tor Browser install...${white}"
 cd /opt
-
 wget https://www.torproject.org/dist/torbrowser/$TOR_VERZIO/tor-browser-linux-x86_64-$TOR_VERZIO.tar.xz
 tar -xvJf tor-browser-*.tar.xz
 rm tor-browser-*.tar.xz
