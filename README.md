@@ -13,8 +13,8 @@
 
 <ins>Messengers:</ins>
 - Signal
-- Element
 - Viber
+- SimpleX.chat
 
 <ins>Office:</ins>
 - LibreOffice
@@ -32,7 +32,6 @@
 
 <ins>Remote support:</ins>
 - TeamViewer
-- RustDesk
 
 <ins>Config tools:</ins>
 - Winbox
