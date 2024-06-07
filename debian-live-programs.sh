@@ -50,7 +50,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     gprename gocryptfs mugshot keepassxc tor geany netdiscover sshuttle grub-customizer \
     ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
     gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu onionshare \
-    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious
+    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump
     
 modprobe ecryptfs    
 
