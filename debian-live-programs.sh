@@ -35,11 +35,11 @@ timedatectl set-timezone Europe/Budapest
 timedatectl set-ntp on
 
 echo -e "${yellow}Repository setting...${white}"
-echo "deb https://ftp.debian.org/debian/ bookworm contrib main non-free non-free-firmware
-deb https://ftp.debian.org/debian/ bookworm-updates contrib main non-free non-free-firmware
-deb https://ftp.debian.org/debian/ bookworm-proposed-updates contrib main non-free non-free-firmware
-deb https://ftp.debian.org/debian/ bookworm-backports contrib main non-free non-free-firmware
-deb https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware" > /etc/apt/sources.list
+echo "deb https://ftp.debian.org/debian/ bookworm contrib main non-free non-free-firmware contrib
+deb https://ftp.debian.org/debian/ bookworm-updates contrib main non-free non-free-firmware contrib
+deb https://ftp.debian.org/debian/ bookworm-proposed-updates contrib main non-free non-free-firmware contrib
+deb https://ftp.debian.org/debian/ bookworm-backports contrib main non-free non-free-firmware contrib
+deb https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware contrib" > /etc/apt/sources.list
 apt update
 apt upgrade -y
 
