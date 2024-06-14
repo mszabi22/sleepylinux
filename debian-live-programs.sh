@@ -134,6 +134,7 @@ Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/simplex-desktop.desktop  
 
+
 echo -e "${yellow}Viber install...${white}"
 cd /tmp
 wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
