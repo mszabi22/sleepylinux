@@ -4,7 +4,7 @@ green='\e[0;32m'
 blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
-TOR_VERZIO="13.0.16"
+TOR_VERZIO="13.5.2"
 # # #
 echo -e "${yellow}rc-local setting...${white}"
 echo '[Unit]
@@ -49,8 +49,9 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     thunderbird thunderbird-l10n-hu gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre \
     gprename gocryptfs mugshot keepassxc tor geany netdiscover sshuttle grub-customizer \
     ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
-    gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu onionshare \
-    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard ddclient
+    gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu \
+    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard ddclient \
+    kleopatra
     
 modprobe ecryptfs    
 
@@ -134,7 +135,6 @@ Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/simplex-desktop.desktop  
 
-
 echo -e "${yellow}Viber install...${white}"
 cd /tmp
 wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
@@ -152,8 +152,8 @@ echo -e "${yellow}Standard Notes install...${white}"
 cd /usr/share/icons
 wget http://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/standard-notes-icon.png
 cd /usr/local/bin
-wget https://github.com/standardnotes/app/releases/download/%40standardnotes/desktop%403.175.2/standard-notes-3.175.2-linux-x86_64.AppImage
-mv standard-notes-3.175.2-linux-x86_64.AppImage standard-notes
+wget https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fdesktop%403.194.13/standard-notes-3.194.13-linux-x86_64.AppImage
+mv standard-notes-*.AppImage standard-notes
 chmod a+x standard-notes
 echo "[Desktop Entry]
 Name=Standard Notes
@@ -165,24 +165,6 @@ ExecutionMode=normal
 Type=Application
 Categories=Office;
 Enabled=true" > /usr/share/applications/standard-notes.desktop
-
-echo -e "${yellow}GnuPG GUI install...${white}"
-cd /usr/share/icons
-wget https://seeklogo.com/images/G/gnupg-logo-1E470BD8D2-seeklogo.com.png
-mv gnupg-logo-1E470BD8D2-seeklogo.com.png gnupg.png
-wget https://download.gnupg.com/files/gnupg/gnupg-desktop-2.3.8.0-x86_64.AppImage
-mv gnupg-desktop-2.3.8.0-x86_64.AppImage /usr/local/bin/gnupg-desktop    
-chmod +x /usr/local/bin/gnupg-desktop
-echo "[Desktop Entry]
-Name=Kleopatra
-Exec=/usr/local/bin/gnupg-desktop
-Icon=/usr/share/icons/gnupg.png
-
-Encoding=UTF-8
-ExecutionMode=normal
-Type=Application
-Categories=Office;
-Enabled=true" > /usr/share/applications/gnupg.desktop
 
 echo -e "${yellow}AEScrypt install...${white}"
 cd
