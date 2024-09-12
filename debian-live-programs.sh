@@ -4,7 +4,7 @@ green='\e[0;32m'
 blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
-TOR_VERZIO="13.5.3"
+TOR_VERZIO="13.5.2"
 # # #
 echo -e "${yellow}rc-local setting...${white}"
 echo '[Unit]
@@ -167,23 +167,13 @@ Categories=Office;
 Enabled=true" > /usr/share/applications/standard-notes.desktop
 
 echo -e "${yellow}AEScrypt install...${white}"
-cd
-wget https://www.aescrypt.com/download/v3/linux/AESCrypt-GUI-3.11-Linux-x86_64-Install.gz
-gunzip AESCrypt-GUI-3.11-Linux-x86_64-Install.gz
-chmod +x AESCrypt-GUI-3.11-Linux-x86_64-Install
-./AESCrypt-GUI-3.11-Linux-x86_64-Install
-rm AESCrypt-GUI-3.11-Linux-x86_64-Install
-echo "[Desktop Entry]
-Encoding=UTF-8
-Name=AESCrypt
-Tooltip=Encrypt or Decrypt a file using AESCrypt 
-Comment=Encrypt or Decrypt a file using AESCrypt
-Exec=/usr/bin/aescrypt-gui %f
-ExecutionMode=normal
-Type=Application
-Icon=/usr/share/aescrypt/SmallLock.png
-Categories=Office;
-Enabled=true" > /usr/share/applications/AESCrypt.desktop
+cd /tmp
+wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.0.5-Linux-x86_64.tar.gz
+tar xzf *.tar.gz
+cd aescrypt_gui-4.0.5-Linux-x86_64
+cp bin/* /usr/local/bin/
+cp -rf share/* /usr/share/
+rm -rf /tmp/aescrypt_gui-4.0.5-Linux-x86_64
 
 echo -e "${yellow}VeraCrypt install...${white}"
 cd
