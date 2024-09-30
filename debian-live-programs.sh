@@ -51,8 +51,8 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
     gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu \
     gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard ddclient \
-    kleopatra mpv deluge gnome-mahjongg quadrapassel
-    
+    kleopatra mpv deluge gnome-mahjongg quadrapassel gnome-chess
+     
 modprobe ecryptfs    
 
 echo -e "${yellow}SSH setting...${white}"
