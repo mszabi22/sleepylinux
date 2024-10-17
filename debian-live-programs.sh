@@ -4,7 +4,7 @@ green='\e[0;32m'
 blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
-TOR_VERZIO="13.5.6"
+TOR_VERZIO="13.5.7"
 # # #
 echo -e "${yellow}rc-local setting...${white}"
 echo '[Unit]
@@ -51,7 +51,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
     gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu \
     gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard ddclient \
-    kleopatra mpv deluge gnome-mahjongg quadrapassel gnome-chess
+    kleopatra deluge gnome-mahjongg quadrapassel gnome-chess
      
 modprobe ecryptfs    
 
@@ -141,12 +141,6 @@ wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
 dpkg -i viber.deb
 apt-get -f install -y
 rm -rf viber.deb
-
-echo -e "${yellow}Tutanota client install...${white}"
-cd /usr/local/bin
-wget https://mail.tutanota.com/desktop/tutanota-desktop-linux.AppImage
-mv tutanota-desktop-linux.AppImage tutanota-desktop
-chmod +x tutanota-desktop
 
 echo -e "${yellow}Standard Notes install...${white}"
 cd /usr/share/icons
