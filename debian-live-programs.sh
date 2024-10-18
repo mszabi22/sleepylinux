@@ -117,8 +117,7 @@ apt update && sudo apt install signal-desktop
 
 echo -e "${yellow}SimpleX chat install...${white}"
 cd /usr/local/bin
-wget https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex-desktop-x86_64.AppImage
-mv simplex-desktop-x86_64.AppImage simplex-desktop
+wget -O simplex-desktop https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex-desktop-x86_64.AppImage
 chmod +x simplex-desktop 
 
 cd /usr/share/icons
