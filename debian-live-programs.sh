@@ -218,16 +218,15 @@ apt-get -f install -y
 rm teamviewer_amd64.deb
 
 echo -e "${yellow}Winbox install...${white}"
-cd /usr/share/icons
-wget https://freesvg.org/img/winbox-mikrotik-icon.png
-mv winbox-mikrotik-icon.png winbox.png
 cd /usr/local/bin
-wget https://mt.lv/winbox64
-chmod a+x winbox64
+wget https://download.mikrotik.com/routeros/winbox/4.0beta9/WinBox_Linux.zip
+unzip WinBox_Linux.zip
+rm WinBox_Linux.zip
+mv WinBox winbox
 echo "[Desktop Entry]
 Name=Winbox
-Exec=wine /usr/local/bin/winbox64
-Icon=/usr/share/icons/winbox.png
+Exec=/usr/local/bin/winbox
+Icon=/usr/local/bin/assets/img/winbox.png
 
 Encoding=UTF-8
 ExecutionMode=normal
