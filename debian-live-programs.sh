@@ -29,6 +29,31 @@ exit 0
 chmod +x /etc/rc.local
 systemctl enable rc-local
 
+echo -e "${yellow}SSH setting...${white}"
+cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
+echo "Include /etc/ssh/sshd_config.d/*.conf
+Port 22
+AllowUsers mszabi@*
+PermitRootLogin no
+PubkeyAuthentication yes
+AuthorizedKeysFile	.ssh/authorized_keys .ssh/authorized_keys2
+PasswordAuthentication no
+
+KbdInteractiveAuthentication yes
+UsePAM yes
+ChallengeResponseAuthentication yes
+
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem	sftp	/usr/lib/openssh/sftp-server" > /etc/ssh/sshd_config
+sudo apt install libpam-google-authenticator
+cp /etc/pam.d/sshd /root/pam.d_sshd.bak
+echo "
+# two-factor authentication via Google Authenticator
+auth   required   pam_google_authenticator.so" >> /etc/pam.d/sshd
+/etc/init.d/ssh restart
+
 echo -e "${yellow}Timezone setting...${white}"
 apt install chrony -y
 timedatectl set-timezone Europe/Budapest
