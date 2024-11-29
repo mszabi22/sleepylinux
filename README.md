@@ -23,15 +23,14 @@
 - KeePassXC
 
 <ins>Encryption/Secure tools:</ins>
-- GnuPG GUI
+- GnuPG GUI (Kleopatra)
 - AEScrypt
 - VeraCrypt
-- Nextcloud Client
-- Onionshare
 - Syncthing
 
 <ins>Remote support:</ins>
 - TeamViewer
+- RustDesk
 
 <ins>Config tools:</ins>
 - Winbox
@@ -44,7 +43,8 @@ firmware-brcm80211 blueman ttf-mscorefonts-installer vlc thunderbird thunderbird
 gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gprename gocryptfs mugshot geany netdiscover sshuttle \
 grub-customizer ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping zenity \
 libpam-google-authenticator gnome-system-tools wireguard wireguard-tools wine64 chntpw gnome-online-accounts\
-ecryptfs-utils hardinfo
+ecryptfs-utils hardinfo gnome-mahjongg quadrapassel gnome-chess acpidump borgbackup vorta ssh-askpass freecad \
+sysbench clamtk dislocker
 
 ## <ins>Method of preparation:</ins>
 1. Run debian-live-build.sh
