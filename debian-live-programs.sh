@@ -77,7 +77,20 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu \
     gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard ddclient \
     kleopatra deluge gnome-mahjongg quadrapassel gnome-chess acpidump borgbackup vorta ssh-askpass freecad \
-    sysbench clamtk
+    sysbench clamtk dislocker
+    
+#Windows BitLocker:
+# sudo mkdir /media/bitlocker
+# sudo mkdir /media/mount
+# sudo dislocker -v -V /dev/sdb1 -uP@Ssword -- /media/bitlocker
+#   VAGY
+# sudo dislocker -v -V /dev/sdb1 --recovery-password=100353-130856-687511-648978-419881-621753-302863-601689 -- /media/bitlocker
+# sudo mount -o loop,rw /media/bitlocker/dislocker-file /media/mount
+#   VAGY
+# sudo mount -t ntfs-3g -o loop /media/bitlocker/dislocker-file /media/mount
+# sudo ls /media/mount   #this lists the contents of the decrypted drive or partition
+# sudo umount /media/mount
+# sudo umount /media/bitlocker    
      
 modprobe ecryptfs    
 
