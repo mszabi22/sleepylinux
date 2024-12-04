@@ -160,6 +160,13 @@ Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/simplex-desktop.desktop  
 
+echo -e "${yellow}Element install...${white}"
+sudo apt install -y wget apt-transport-https
+‍wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
+sudo ‍echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
+sudo apt update
+sudo apt install element-desktop
+
 echo -e "${yellow}Viber install...${white}"
 cd /usr/local/bin
 wget https://download.cdn.viber.com/desktop/Linux/viber.AppImage
