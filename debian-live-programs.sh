@@ -52,7 +52,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu \
     gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard ddclient \
     kleopatra deluge gnome-mahjongg quadrapassel gnome-chess acpidump borgbackup vorta ssh-askpass freecad \
-    sysbench clamtk dislocker stress s-tui
+    sysbench clamtk dislocker stress s-tui traceroute iputils-ping
     
 #Windows BitLocker:
 # sudo mkdir /media/bitlocker
@@ -159,15 +159,6 @@ ExecutionMode=normal
 Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/simplex-desktop.desktop  
-
-echo -e "${yellow}Element install...${white}"
-sudo apt install -y wget apt-transport-https
-‍wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
-sudo ‍echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
-‍sudo wget -O /usr/share/keyrings/element-io-archive-keyring.gpg https://packages.element.io/debian/element-io-archive-keyring.gpg
-‍echo "deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main" | sudo tee /etc/apt/sources.list.d/element-io.list
-sudo apt update
-sudo apt install element-desktop
 
 echo -e "${yellow}Viber install...${white}"
 cd /usr/local/bin
