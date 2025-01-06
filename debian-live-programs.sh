@@ -49,10 +49,9 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     thunderbird thunderbird-l10n-hu gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre \
     gprename gocryptfs mugshot keepassxc tor geany netdiscover sshuttle grub-customizer \
     ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
-    gparted gnome-system-tools zenity wireguard wireguard-tools wine64 chntpw libreoffice-l10n-hu \
-    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard ddclient \
-    kleopatra deluge gnome-mahjongg quadrapassel gnome-chess acpidump borgbackup vorta ssh-askpass freecad \
-    sysbench clamtk dislocker stress s-tui traceroute iputils-ping fish
+    gparted gnome-system-tools zenity wireguard wireguard-tools chntpw libreoffice-l10n-hu \
+    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard \
+    kleopatra deluge acpidump borgbackup vorta ssh-askpass freecad sysbench clamtk dislocker stress s-tui traceroute iputils-ping
     
 #Windows BitLocker:
 # sudo mkdir /media/bitlocker
