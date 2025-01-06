@@ -160,6 +160,25 @@ Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/simplex-desktop.desktop  
 
+echo -e "${yellow}Session chat install...${white}"
+cd /usr/local/bin
+wget -O session-desktop https://getsession.org/linux
+chmod +x session-desktop 
+
+cd /usr/share/icons
+wget https://getsession.org/assets/images/logo-black.png -O session-logo.png
+
+echo "[Desktop Entry]
+Name=Session Messenger
+Exec=/usr/local/bin/session-desktop
+Icon=/usr/share/icons/session-logo.png
+
+Encoding=UTF-8
+ExecutionMode=normal
+Type=Application
+Categories=Network;
+Enabled=true" > /usr/share/applications/session-desktop.desktop  
+
 echo -e "${yellow}Viber install...${white}"
 cd /usr/local/bin
 wget https://download.cdn.viber.com/desktop/Linux/viber.AppImage
