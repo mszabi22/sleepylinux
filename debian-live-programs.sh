@@ -214,15 +214,6 @@ Type=Application
 Categories=Office;
 Enabled=true" > /usr/share/applications/standard-notes.desktop
 
-echo -e "${yellow}AEScrypt install...${white}"
-cd /tmp
-wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.0.5-Linux-x86_64.tar.gz
-tar xzf *.tar.gz
-cd aescrypt_gui-4.0.5-Linux-x86_64
-cp bin/* /usr/local/bin/
-cp -rf share/* /usr/share/
-rm -rf /tmp/aescrypt_gui-4.0.5-Linux-x86_64
-
 echo -e "${yellow}VeraCrypt install...${white}"
 cd
 wget https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-Debian-12-amd64.deb
