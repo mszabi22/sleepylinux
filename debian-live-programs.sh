@@ -51,7 +51,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
     gparted gnome-system-tools zenity wireguard wireguard-tools chntpw libreoffice-l10n-hu \
     gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard \
-    kleopatra deluge acpidump borgbackup vorta ssh-askpass freecad sysbench clamtk dislocker stress s-tui traceroute iputils-ping
+    kleopatra deluge acpidump borgbackup vorta ssh-askpass sysbench clamtk dislocker stress s-tui traceroute iputils-ping
     
 #Windows BitLocker:
 # sudo mkdir /media/bitlocker
