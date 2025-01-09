@@ -45,14 +45,19 @@ apt upgrade -y
 
 echo -e "${yellow}Apps install...${white}"
 apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
-    firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc \
-    thunderbird thunderbird-l10n-hu gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre \
-    gprename gocryptfs mugshot keepassxc tor geany netdiscover sshuttle grub-customizer \
-    ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
-    gparted gnome-system-tools zenity wireguard wireguard-tools chntpw libreoffice-l10n-hu \
-    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard \
-    kleopatra deluge acpidump borgbackup vorta ssh-askpass sysbench clamtk dislocker stress s-tui traceroute iputils-ping
-    
+    firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc thunderbird thunderbird-l10n-hu \
+    gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gocryptfs mugshot keepassxc tor geany ntpsec \
+    libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
+    syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk
+
+echo -e "${yellow}Admin Tools? (i/n)${white}"
+read ADMINTOOLS_INSTALL
+if [ $ADMINTOOLS_INSTALL = 'i' ]; then
+echo -e "${yellow}Admin Tools telepítése...${white}"
+	apt install gprename gparted netdiscover sshuttle grub-customizer remmina remmina-plugin-rdp remmina-plugin-vnc \
+	net-tools dnsutils arping zenity chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping  
+fi
+ 
 #Windows BitLocker:
 # sudo mkdir /media/bitlocker
 # sudo mkdir /media/mount
