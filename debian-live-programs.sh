@@ -55,7 +55,8 @@ read ADMINTOOLS_INSTALL
 if [ $ADMINTOOLS_INSTALL = 'i' ]; then
 echo -e "${yellow}Admin Tools telepítése...${white}"
 	apt install gprename gparted netdiscover sshuttle grub-customizer remmina remmina-plugin-rdp remmina-plugin-vnc \
-	net-tools dnsutils arping zenity chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping  
+	net-tools dnsutils arping zenity chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping \
+	wireshark
 fi
  
 #Windows BitLocker:
@@ -236,7 +237,6 @@ Categories=Office;
 Keywords=encryption,filesystem
 Terminal=false
 MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
-
 
 echo -e "${yellow}RustDesk? (i/n)${white}"
 read RUSTDESK_INSTALL
