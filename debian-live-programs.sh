@@ -270,7 +270,7 @@ unzip WinBox_Linux.zip
 rm WinBox_Linux.zip
 echo "[Desktop Entry]
 Name=Winbox
-Exec=/usr/local/bin/WinBox
+Exec=/usr/local/bin/winbox
 Icon=/usr/local/bin/assets/img/winbox.png
 
 Encoding=UTF-8
