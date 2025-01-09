@@ -59,8 +59,6 @@ echo -e "${yellow}Admin Tools telepítése...${white}"
 	wireshark
 fi
  
-  
-     
 modprobe ecryptfs    
 
 echo -e "${yellow}SSH setting...${white}"
@@ -154,7 +152,7 @@ Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/simplex-desktop.desktop  
 
-echo -e "${yellow}Session chat install...${white}"
+echo -e "${yellow}Session Messenger install...${white}"
 cd /usr/local/bin
 wget -O session-desktop https://getsession.org/linux
 chmod +x session-desktop 
