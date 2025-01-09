@@ -151,7 +151,7 @@ wget -O simplex-desktop https://github.com/simplex-chat/simplex-chat/releases/la
 chmod +x simplex-desktop 
 
 cd /usr/share/icons
-wget https://simplex.chat/img/new/logo-dark.png -O simplex-logo.png
+wget https://appimage.github.io/database/SimpleX/icons/512x512/simplex.png -O simplex-logo.png
 
 echo "[Desktop Entry]
 Name=SimpleX.chat
@@ -170,7 +170,7 @@ wget -O session-desktop https://getsession.org/linux
 chmod +x session-desktop 
 
 cd /usr/share/icons
-wget https://getsession.org/assets/images/logo-black.png -O session-logo.png
+wget https://getsession.org/apple-touch-icon.png -O session-logo.png
 
 echo "[Desktop Entry]
 Name=Session Messenger
@@ -191,7 +191,7 @@ chmod +x viber
 cd /usr/share/icons
 wget -O viber-logo.png https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzh.wizcase.com%2Fwp-content%2Fuploads%2F2020%2F02%2FVIBER-LOGO-1.png&f=1&nofb=1&ipt=95f0c86d8e9533c00e85b8621237d03bae171b5e9a253152513eb3bb4fa223e1&ipo=images
 echo "[Desktop Entry]
-Name=Biber
+Name=Viber
 Exec=/usr/local/bin/viber
 Icon=/usr/share/icons/viber-logo.png
 
