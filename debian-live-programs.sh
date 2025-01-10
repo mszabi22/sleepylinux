@@ -120,9 +120,9 @@ tar -xvJf tor-browser-*.tar.xz
 rm tor-browser-*.tar.xz
 chmod -R 755 /opt/tor-browser 
 echo "#!/bin/bash
+sudo chown -R $USER:$USER /opt/tor-browser
 cd /opt/tor-browser
-./start-tor-browser.desktop --register-app
-sudo chown -R \$USER:\$USER /opt/tor-browser" > /usr/local/bin/tor-browser-setup
+./start-tor-browser.desktop --register-app" > /usr/local/bin/tor-browser-setup
 chmod +x /usr/local/bin/tor-browser-setup
 cd
 
