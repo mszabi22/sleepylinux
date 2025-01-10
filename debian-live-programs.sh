@@ -119,7 +119,7 @@ wget https://www.torproject.org/dist/torbrowser/$TOR_VERZIO/tor-browser-linux-x8
 tar -xvJf tor-browser-*.tar.xz
 rm tor-browser-*.tar.xz
 chmod -R 755 /opt/tor-browser 
-echo "#!/usr/bin/bash
+echo "#!/bin/bash
 cd /opt/tor-browser
 ./start-tor-browser.desktop --register-app
 sudo chown -R \$USER:\$USER /opt/tor-browser" > /usr/local/bin/tor-browser-setup
