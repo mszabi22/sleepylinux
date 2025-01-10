@@ -4,7 +4,7 @@ green='\e[0;32m'
 blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
-TOR_VERZIO="14.0.3"
+TOR_VERZIO="14.0.4"
 # # #
 echo -e "${yellow}rc-local setting...${white}"
 echo '[Unit]
