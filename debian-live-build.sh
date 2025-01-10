@@ -18,6 +18,7 @@ lb config noauto \
 	--iso-application SleepyLinux \
 	--iso-preparer `date +%Y.%m.%d.` \
 	--iso-publisher "Sleepy.hu" \
+	--iso-volume "SleepyLinux"\
 	--memtest none \
 	--interactive shell
  
