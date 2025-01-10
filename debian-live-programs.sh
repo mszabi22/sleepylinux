@@ -122,8 +122,8 @@ chmod -R 755 /opt/tor-browser
 echo "#!/usr/bin/bash
 cd /opt/tor-browser
 ./start-tor-browser.desktop --register-app
-sudo chown -R \$USER:\$USER /opt/tor-browser" > /usr/local/bin/tor-browser-setup.sh
-chmod +x /usr/local/bin/tor-browser-setup.sh
+sudo chown -R \$USER:\$USER /opt/tor-browser" > /usr/local/bin/tor-browser-setup
+chmod +x /usr/local/bin/tor-browser-setup
 cd
 
 echo -e "${yellow}Signal install...${white}"
