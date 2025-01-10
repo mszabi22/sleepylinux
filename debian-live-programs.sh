@@ -228,7 +228,7 @@ MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/
 echo -e "${yellow}RustDesk? (i/n)${white}"
 read RUSTDESK_INSTALL
 if [ $RUSTDESK_INSTALL = 'i' ]; then
-	echo -e "${yellow}RustDesk install..${white}"
+	echo -e "${yellow}RustDesk install...${white}"
 	cd /usr/local/bin
 	wget https://github.com/rustdesk/rustdesk/releases/download/1.3.1/rustdesk-1.3.1-x86_64.AppImage
 	mv rustdesk-1.3.1-x86_64.AppImage rustdesk
@@ -248,7 +248,7 @@ Categories=Network;
 Enabled=true" > /usr/share/applications/rustdesk.desktop 	
 fi
 
-echo -e "${yellow}TeamViewer install${white}"
+echo -e "${yellow}TeamViewer install...${white}"
 cd
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb
@@ -272,9 +272,3 @@ Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
 
 echo -e "${green}DONE.${white}"
-
-echo "CHECK list:"
-echo "- Lightdm"
-echo "- /etc/skel"
-echo "- /usr/local/bin/join-ad"
-echo "- /usr/local/bin/tor-browser-setup"
