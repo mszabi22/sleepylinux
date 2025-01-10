@@ -3,3 +3,6 @@
 sudo apt remove --purge gprename gparted netdiscover sshuttle grub-customizer remmina remmina-plugin-rdp remmina-plugin-vnc \
 net-tools dnsutils arping zenity chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping \
 wireshark*
+sudo rm -rf /usr/local/bin/WinBox
+sudo rm -rf /usr/local/bin/assets
+sudo rm -rf /usr/share/applications/winbox.desktop
