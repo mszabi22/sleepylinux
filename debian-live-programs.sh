@@ -4,7 +4,7 @@ green='\e[0;32m'
 blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
-TOR_VERZIO="14.0.3"
+TOR_VERZIO="14.0.4"
 # # #
 echo -e "${yellow}rc-local setting...${white}"
 echo '[Unit]
@@ -45,27 +45,20 @@ apt upgrade -y
 
 echo -e "${yellow}Apps install...${white}"
 apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
-    firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc \
-    thunderbird thunderbird-l10n-hu gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre \
-    gprename gocryptfs mugshot keepassxc tor geany netdiscover sshuttle grub-customizer \
-    ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping libpam-google-authenticator \
-    gparted gnome-system-tools zenity wireguard wireguard-tools chntpw libreoffice-l10n-hu \
-    gnome-online-accounts hardinfo syncthing qrencode ecryptfs-utils audacious acpidump molly-guard \
-    kleopatra deluge acpidump borgbackup vorta ssh-askpass freecad sysbench clamtk dislocker stress s-tui traceroute iputils-ping
-    
-#Windows BitLocker:
-# sudo mkdir /media/bitlocker
-# sudo mkdir /media/mount
-# sudo dislocker -v -V /dev/sdb1 -uP@Ssword -- /media/bitlocker
-#   VAGY
-# sudo dislocker -v -V /dev/sdb1 --recovery-password=100353-130856-687511-648978-419881-621753-302863-601689 -- /media/bitlocker
-# sudo mount -o loop,rw /media/bitlocker/dislocker-file /media/mount
-#   VAGY
-# sudo mount -t ntfs-3g -o loop /media/bitlocker/dislocker-file /media/mount
-# sudo ls /media/mount   #this lists the contents of the decrypted drive or partition
-# sudo umount /media/mount
-# sudo umount /media/bitlocker    
-     
+    firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc thunderbird thunderbird-l10n-hu \
+    gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gocryptfs mugshot keepassxc tor geany ntpsec \
+    libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
+    syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer
+
+echo -e "${yellow}Admin Tools? (i/n)${white}"
+read ADMINTOOLS_INSTALL
+if [ $ADMINTOOLS_INSTALL = 'i' ]; then
+echo -e "${yellow}Admin Tools telepítése...${white}"
+	apt install gprename gparted netdiscover sshuttle grub-customizer remmina remmina-plugin-rdp remmina-plugin-vnc \
+	net-tools dnsutils arping zenity chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping \
+	wireshark -y
+fi
+ 
 modprobe ecryptfs    
 
 echo -e "${yellow}SSH setting...${white}"
@@ -126,11 +119,11 @@ wget https://www.torproject.org/dist/torbrowser/$TOR_VERZIO/tor-browser-linux-x8
 tar -xvJf tor-browser-*.tar.xz
 rm tor-browser-*.tar.xz
 chmod -R 755 /opt/tor-browser 
-echo "#!/usr/bin/bash
+echo "#!/bin/bash
+sudo chown -R $USER:$USER /opt/tor-browser
 cd /opt/tor-browser
-./start-tor-browser.desktop --register-app
-sudo chown -R \$USER:\$USER /opt/tor-browser" > /usr/local/bin/tor-browser-setup.sh
-chmod +x /usr/local/bin/tor-browser-setup.sh
+./start-tor-browser.desktop --register-app" > /usr/local/bin/tor-browser-setup
+chmod +x /usr/local/bin/tor-browser-setup
 cd
 
 echo -e "${yellow}Signal install...${white}"
@@ -146,7 +139,7 @@ wget -O simplex-desktop https://github.com/simplex-chat/simplex-chat/releases/la
 chmod +x simplex-desktop 
 
 cd /usr/share/icons
-wget https://simplex.chat/img/new/logo-dark.png -O simplex-logo.png
+wget https://appimage.github.io/database/SimpleX/icons/512x512/simplex.png -O simplex-logo.png
 
 echo "[Desktop Entry]
 Name=SimpleX.chat
@@ -159,13 +152,13 @@ Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/simplex-desktop.desktop  
 
-echo -e "${yellow}Session chat install...${white}"
+echo -e "${yellow}Session Messenger install...${white}"
 cd /usr/local/bin
 wget -O session-desktop https://getsession.org/linux
 chmod +x session-desktop 
 
 cd /usr/share/icons
-wget https://getsession.org/assets/images/logo-black.png -O session-logo.png
+wget https://getsession.org/apple-touch-icon.png -O session-logo.png
 
 echo "[Desktop Entry]
 Name=Session Messenger
@@ -186,7 +179,7 @@ chmod +x viber
 cd /usr/share/icons
 wget -O viber-logo.png https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzh.wizcase.com%2Fwp-content%2Fuploads%2F2020%2F02%2FVIBER-LOGO-1.png&f=1&nofb=1&ipt=95f0c86d8e9533c00e85b8621237d03bae171b5e9a253152513eb3bb4fa223e1&ipo=images
 echo "[Desktop Entry]
-Name=Biber
+Name=Viber
 Exec=/usr/local/bin/viber
 Icon=/usr/share/icons/viber-logo.png
 
@@ -232,11 +225,10 @@ Keywords=encryption,filesystem
 Terminal=false
 MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
 
-
 echo -e "${yellow}RustDesk? (i/n)${white}"
 read RUSTDESK_INSTALL
 if [ $RUSTDESK_INSTALL = 'i' ]; then
-	echo -e "${yellow}RustDesk install..${white}"
+	echo -e "${yellow}RustDesk install...${white}"
 	cd /usr/local/bin
 	wget https://github.com/rustdesk/rustdesk/releases/download/1.3.1/rustdesk-1.3.1-x86_64.AppImage
 	mv rustdesk-1.3.1-x86_64.AppImage rustdesk
@@ -256,7 +248,7 @@ Categories=Network;
 Enabled=true" > /usr/share/applications/rustdesk.desktop 	
 fi
 
-echo -e "${yellow}TeamViewer install${white}"
+echo -e "${yellow}TeamViewer install...${white}"
 cd
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb
@@ -280,9 +272,3 @@ Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
 
 echo -e "${green}DONE.${white}"
-
-echo "CHECK list:"
-echo "- Lightdm"
-echo "- /etc/skel"
-echo "- /usr/local/bin/join-ad"
-echo "- /usr/local/bin/tor-browser-setup"
