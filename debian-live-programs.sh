@@ -225,14 +225,11 @@ Keywords=encryption,filesystem
 Terminal=false
 MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
 
-echo -e "${yellow}RustDesk? (i/n)${white}"
-read RUSTDESK_INSTALL
-if [ $RUSTDESK_INSTALL = 'i' ]; then
-	echo -e "${yellow}RustDesk install...${white}"
-	cd /usr/local/bin
-	wget https://github.com/rustdesk/rustdesk/releases/download/1.3.1/rustdesk-1.3.1-x86_64.AppImage
-	mv rustdesk-1.3.1-x86_64.AppImage rustdesk
-	chmod +x rustdesk
+echo -e "${yellow}RustDesk install...${white}"
+cd /usr/local/bin
+wget https://github.com/rustdesk/rustdesk/releases/download/1.3.1/rustdesk-1.3.1-x86_64.AppImage
+mv rustdesk-1.3.1-x86_64.AppImage rustdesk
+chmod +x rustdesk
 cd /usr/share/icons
 wget -q -O rustdesk-logo.png https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.myqnap.org%2Fwp-content%2Fuploads%2Frustdesk-logo.png&f=1&nofb=1&ipt=31c1fd688cfe78d356d7f6339be7858c1972b3270cb2c2ebdbbdeb72fccedc0f&ipo=images
 	
@@ -246,7 +243,7 @@ ExecutionMode=normal
 Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/rustdesk.desktop 	
-fi
+
 
 echo -e "${yellow}TeamViewer install...${white}"
 cd
