@@ -1,8 +1,20 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/oem/Asztal/system-installer.desktop]
-row=3
+[/home/user/last_update.txt]
+row=4
+col=0
+
+[/home/user/install-debian.desktop]
+row=6
+col=0
+
+[/home/user/bitlocker_todo.txt]
+row=5
+col=0
+
+[fb095a67-a882-43fd-bc7d-69e271bec45d]
+row=2
 col=0
 
 [Kuka]
@@ -13,7 +25,7 @@ col=0
 row=1
 col=0
 
-[/home/oem]
-row=2
+[/home/user]
+row=3
 col=0
 
