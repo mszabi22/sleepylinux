@@ -1,6 +1,7 @@
 #!/bin/bash
 cp background.svg /usr/share/desktop-base/emerald-theme/wallpaper/contents/images/
 cp /usr/share/images/desktop-base/desktop-background.xml /usr/share/images/desktop-base/desktop-background.xml.bak
+rm /usr/share/images/desktop-base/desktop-background.xml
 echo "
 <background>
   <static>
