@@ -1,6 +1,6 @@
 favorites=brave-browser.desktop,thunderbird.desktop,signal-desktop.desktop,element-desktop.desktop,org.keepassxc.KeePassXC.desktop,standard-notes.desktop,veracrypt.desktop
 recent=
-button-icon=emblem-debian-white
+button-icon=debian-logo
 button-single-row=false
 show-button-title=false
 show-button-icon=true
