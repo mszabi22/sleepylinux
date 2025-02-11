@@ -270,4 +270,6 @@ Type=Application
 Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
 
+adduser user
+
 echo -e "${green}DONE.${white}"
