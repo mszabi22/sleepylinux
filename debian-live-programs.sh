@@ -50,7 +50,8 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc thunderbird thunderbird-l10n-hu \
     gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gocryptfs mugshot keepassxc tor geany ntpsec zenity\
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
-    syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer
+    syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer \
+    ntpdate
 
 echo -e "${yellow}Admin Tools? (i/n)${white}"
 read ADMINTOOLS_INSTALL
