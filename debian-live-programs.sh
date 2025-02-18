@@ -222,11 +222,12 @@ Name=VeraCrypt
 GenericName=VeraCrypt volume manager
 Comment=Create and mount VeraCrypt encrypted volumes
 Icon=veracrypt
-Exec=/usr/bin/veracrypt %f
+Exec=sudo /usr/bin/veracrypt %f
 Categories=Office;
 Keywords=encryption,filesystem
 Terminal=false
 MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
+"%sudo  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
 
 echo -e "${yellow}RustDesk install...${white}"
 cd /usr/local/bin
