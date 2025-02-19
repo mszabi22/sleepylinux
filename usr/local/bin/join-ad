@@ -2,18 +2,6 @@
 echo "Active Directory member? (i/n)"
 read ADMEMBER_INSTALL
 if [ $ADMEMBER_INSTALL = 'i' ]; then
-	apt -y install realmd sssd sssd-tools libnss-sss libpam-sss adcli samba-common-bin oddjob oddjob-mkhomedir packagekit 
-	echo "Domain name?"
-	read DOMAINNAME
-	echo "User name?"
-	read USERNAME
-	realm discover $DOMAINNAME
-	realm join --user=$USERNAME $DOMAINNAME
-	id $USERNAME@$DOMAINNAME
-	echo "session required pam_mkhomedir.so skel=/etc/skel/ umask=0022" |  tee -a /etc/pam.d/common-session
-	echo "$USERNAME@$DOMAINNAME ALL=(ALL) ALL" |  tee -a /etc/sudoers.d/domain_admins
-	mcedit /etc/sssd/sssd.conf
-	systemctl restart sssd 
 #AD rules
 firewall-cmd --permanent --zone=drop --add-port=137/udp --add-port=137/tcp
 firewall-cmd --permanent --zone=drop --add-port=138/udp --add-port=138/tcp
@@ -29,6 +17,18 @@ firewall-cmd --permanent --zone=drop --add-port=464/udp --add-port=464/tcp
 firewall-cmd --permanent --zone=drop --add-port=445/udp --add-port=445/tcp
 firewall-cmd --permanent --zone=drop --add-port=123/udp --add-port=123/tcp
 firewall-cmd --reload
+	apt -y install realmd sssd sssd-tools libnss-sss libpam-sss adcli samba-common-bin oddjob oddjob-mkhomedir packagekit 
+	echo "Domain name?"
+	read DOMAINNAME
+	echo "User name?"
+	read USERNAME
+	realm discover $DOMAINNAME
+	realm join --user=$USERNAME $DOMAINNAME
+	id $USERNAME@$DOMAINNAME
+	echo "session required pam_mkhomedir.so skel=/etc/skel/ umask=0022" |  tee -a /etc/pam.d/common-session
+	echo "$USERNAME@$DOMAINNAME ALL=(ALL) ALL" |  tee -a /etc/sudoers.d/domain_admins
+	mcedit /etc/sssd/sssd.conf
+	systemctl restart sssd 
 	
 	#realm leave --user=pingvin $DOMAINNAME	
 fi
