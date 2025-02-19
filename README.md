@@ -13,12 +13,12 @@
 
 <ins>Messengers:</ins>
 - Signal
+- Session Messenger
 - Viber
 - SimpleX.chat
 
 <ins>Office:</ins>
 - LibreOffice
-- Tutanota
 - Standard Notes
 - KeePassXC
 
@@ -44,7 +44,7 @@ gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gprename gocryptfs mugshot ge
 grub-customizer ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping zenity \
 libpam-google-authenticator gnome-system-tools wireguard wireguard-tools wine64 chntpw gnome-online-accounts\
 ecryptfs-utils hardinfo gnome-mahjongg quadrapassel gnome-chess acpidump borgbackup vorta ssh-askpass freecad \
-sysbench clamtk dislocker
+sysbench clamtk dislocker firewalld
 
 ## <ins>Method of preparation:</ins>
 1. Run debian-live-build.sh
