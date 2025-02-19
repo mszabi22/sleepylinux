@@ -142,6 +142,7 @@ wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signa
 cat signal-desktop-keyring.gpg | tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | tee /etc/apt/sources.list.d/signal-xenial.list
 apt update && sudo apt install signal-desktop
+rm signal-desktop-keyring.gpg
 
 echo -e "${yellow}SimpleX chat install...${white}"
 cd /usr/local/bin
