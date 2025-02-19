@@ -53,13 +53,6 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer \
     ntpdate firewalld firewall-config firewall-applet
 
-firewall-cmd --set-default-zone=drop
-firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 0 -j ACCEPT
-firewall-cmd --permanent --zone=drop --add-service=ssh
-firewall-cmd --permanent --zone=drop --add-port=5678/udp --add-port=8291/tcp
-firewall-cmd --permanent --zone=drop --add-port=68/udp --add-port=67/udp
-firewall-cmd --reload
-
 echo -e "${yellow}Admin Tools? (i/n)${white}"
 read ADMINTOOLS_INSTALL
 if [ $ADMINTOOLS_INSTALL = 'i' ]; then

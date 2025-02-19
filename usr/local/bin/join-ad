@@ -2,6 +2,8 @@
 echo "Active Directory member? (i/n)"
 read ADMEMBER_INSTALL
 if [ $ADMEMBER_INSTALL = 'i' ]; then
+rm /etc/skel/firewall.cmd
+deluser user
 #AD rules
 firewall-cmd --permanent --zone=drop --add-port=137/udp --add-port=137/tcp
 firewall-cmd --permanent --zone=drop --add-port=138/udp --add-port=138/tcp
