@@ -54,7 +54,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     ntpdate firewalld firewall-config firewall-applet
 
 firewall-cmd --set-default-zone=drop
-firewall-cmd --permanent --zone=drop --add-service=ssh
+firewall-cmd --permanent --zone=drop --add-service=ssh --add-service=http --add-service=https --add-service=mysql
 firewall-cmd --permanent --zone=drop --add-service=wireguard
 firewall-cmd --permanent --zone=drop --add-port=5678/udp --add-port=8291/tcp
 firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 0 -j ACCEPT
