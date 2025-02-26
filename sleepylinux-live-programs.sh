@@ -51,7 +51,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gocryptfs mugshot keepassxc tor geany ntpsec zenity\
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
     syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer \
-    ntpdate firewalld firewall-config firewall-applet tigervnc-viewer
+    ntpdate firewalld firewall-config firewall-applet tigervnc-viewer zulucrypt-gui
 
 echo "%sudo ALL = (ALL:ALL) NOPASSWD: /usr/bin/firewall-cmd" >> /etc/sudoers
 
@@ -255,25 +255,6 @@ ExecutionMode=normal
 Type=Application
 Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
-
-echo -e "${yellow}VeraCrypt install...${white}"
-cd
-wget https://launchpad.net/veracrypt/trunk/1.26.20/+download/veracrypt-1.26.20-Debian-12-amd64.deb
-dpkg -i veracrypt-1.26.20-Debian-12-amd64.deb
-rm veracrypt-1.26.20-Debian-12-amd64.deb
-apt-get -f install -y
-echo "[Desktop Entry]
-Type=Application
-Name=VeraCrypt
-GenericName=VeraCrypt volume manager
-Comment=Create and mount VeraCrypt encrypted volumes
-Icon=veracrypt
-Exec=sudo /usr/bin/veracrypt %f
-Categories=Office;
-Keywords=encryption,filesystem
-Terminal=false
-MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
-echo "%sudo  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
 
 echo -e "${yellow}Create user...${white}"
 adduser user
