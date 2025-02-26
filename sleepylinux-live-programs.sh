@@ -213,25 +213,6 @@ Type=Application
 Categories=Office;
 Enabled=true" > /usr/share/applications/standard-notes.desktop
 
-echo -e "${yellow}VeraCrypt install...${white}"
-cd
-wget https://launchpad.net/veracrypt/trunk/1.26.20/+download/veracrypt-1.26.20-Debian-12-amd64.deb
-dpkg -i veracrypt-1.26.20-Debian-12-amd64.deb
-rm veracrypt-1.26.20-Debian-12-amd64.deb
-apt-get -f install -y
-echo "[Desktop Entry]
-Type=Application
-Name=VeraCrypt
-GenericName=VeraCrypt volume manager
-Comment=Create and mount VeraCrypt encrypted volumes
-Icon=veracrypt
-Exec=sudo /usr/bin/veracrypt %f
-Categories=Office;
-Keywords=encryption,filesystem
-Terminal=false
-MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
-"%sudo  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
-
 echo -e "${yellow}RustDesk install...${white}"
 cd /usr/local/bin
 wget https://github.com/rustdesk/rustdesk/releases/download/1.3.1/rustdesk-1.3.1-x86_64.AppImage
@@ -274,6 +255,25 @@ ExecutionMode=normal
 Type=Application
 Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
+
+echo -e "${yellow}VeraCrypt install...${white}"
+cd
+wget https://launchpad.net/veracrypt/trunk/1.26.20/+download/veracrypt-1.26.20-Debian-12-amd64.deb
+dpkg -i veracrypt-1.26.20-Debian-12-amd64.deb
+rm veracrypt-1.26.20-Debian-12-amd64.deb
+apt-get -f install -y
+echo "[Desktop Entry]
+Type=Application
+Name=VeraCrypt
+GenericName=VeraCrypt volume manager
+Comment=Create and mount VeraCrypt encrypted volumes
+Icon=veracrypt
+Exec=sudo /usr/bin/veracrypt %f
+Categories=Office;
+Keywords=encryption,filesystem
+Terminal=false
+MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
+"%sudo  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
 
 echo -e "${yellow}Create user...${white}"
 adduser user
