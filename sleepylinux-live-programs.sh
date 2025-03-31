@@ -7,7 +7,7 @@ white='\e[0;37m'
 
 TOR_VERZIO="14.0.7"
 
-# # #
+########################################################################
 echo -e "${yellow}rc-local setting...${white}"
 echo '[Unit]
 Description=/etc/rc.local
@@ -31,11 +31,13 @@ exit 0
 chmod +x /etc/rc.local
 systemctl enable rc-local
 
+########################################################################
 echo -e "${yellow}Timezone setting...${white}"
 apt install chrony -y
 timedatectl set-timezone Europe/Budapest
 timedatectl set-ntp on
 
+########################################################################
 echo -e "${yellow}Repository setting...${white}"
 echo "deb https://ftp.debian.org/debian/ bookworm contrib main non-free non-free-firmware contrib
 deb https://ftp.debian.org/debian/ bookworm-updates contrib main non-free non-free-firmware contrib
@@ -45,17 +47,19 @@ deb https://security.debian.org/debian-security/ bookworm-security contrib main 
 apt update
 apt upgrade -y
 
+########################################################################
 echo -e "${yellow}Apps install...${white}"
 apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
     firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman vlc thunderbird thunderbird-l10n-hu \
     gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick alacarte gocryptfs mugshot keepassxc tor geany ntpsec zenity\
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
     syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer \
-    ntpdate firewalld firewall-config firewall-applet zulucrypt-gui krita krita-l10n nfs-common stacer
+    ntpdate firewalld firewall-config firewall-applet zulucrypt-gui krita krita-l10n nfs-common
     #ttf-mscorefonts-installer
 
 echo "%sudo ALL = (ALL:ALL) NOPASSWD: /usr/bin/firewall-cmd" >> /etc/sudoers
 
+########################################################################
 echo -e "${yellow}Admin Tools? (i/n)${white}"
 read ADMINTOOLS_INSTALL
 if [ $ADMINTOOLS_INSTALL = 'i' ]; then
@@ -63,11 +67,10 @@ echo -e "${yellow}Admin Tools telepítése...${white}"
 	apt install gprename gparted netdiscover sshuttle grub-customizer remmina remmina-plugin-rdp remmina-plugin-vnc \
 	net-tools dnsutils arping chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping \
 	wireshark tigervnc-viewer tigervnc-tools -y
-	
+	modprobe ecryptfs    	
 fi
  
-modprobe ecryptfs    
-
+########################################################################
 echo -e "${yellow}SSH setting...${white}"
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 echo "Include /etc/ssh/sshd_config.d/*.conf
@@ -93,6 +96,7 @@ echo "
 auth   required   pam_google_authenticator.so" >> /etc/pam.d/sshd
 /etc/init.d/ssh restart
 
+########################################################################
 echo -e "${yellow}Brave install...${white}"    
 apt install curl
 curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -120,6 +124,7 @@ Name=Inkognitó mód
 Exec=/usr/bin/brave-browser-stable --incognito
 " > /usr/share/applications/brave-browser.desktop
 
+########################################################################
 echo -e "${yellow}Tor Browser install...${white}"
 cd /opt
 wget https://www.torproject.org/dist/torbrowser/$TOR_VERZIO/tor-browser-linux-x86_64-$TOR_VERZIO.tar.xz
@@ -133,6 +138,7 @@ cd /opt/tor-browser
 chmod +x /usr/local/bin/tor-browser-setup
 cd
 
+########################################################################
 echo -e "${yellow}Signal install...${white}"
 cd
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
@@ -141,6 +147,7 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 apt update && sudo apt install signal-desktop
 rm signal-desktop-keyring.gpg
 
+########################################################################
 echo -e "${yellow}Viber install...${white}"
 cd /usr/local/bin
 wget https://download.cdn.viber.com/desktop/Linux/viber.AppImage
@@ -159,6 +166,7 @@ Type=Application
 Categories=Network;
 Enabled=true" > /usr/share/applications/viber.desktop  
 
+########################################################################
 echo -e "${yellow}Standard Notes install...${white}"
 cd /usr/share/icons
 wget http://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/standard-notes-icon.png
@@ -177,10 +185,12 @@ Type=Application
 Categories=Office;
 Enabled=true" > /usr/share/applications/standard-notes.desktop
 
+########################################################################
 echo -e "${yellow}AEScrypt install...${white}"
 wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.2.3-Linux-x86_64.deb
 dpkg -i aescrypt_gui-4.2.3-Linux-x86_64.deb
 
+########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
 cd
 wget https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-Debian-12-amd64.deb
@@ -201,6 +211,7 @@ Terminal=false
 MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
 echo "%sudo  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
 
+########################################################################
 echo -e "${yellow}TeamViewer install...${white}"
 cd
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
@@ -208,6 +219,7 @@ dpkg -i teamviewer_amd64.deb
 apt-get -f install -y
 rm teamviewer_amd64.deb
 
+########################################################################
 echo -e "${yellow}Winbox install...${white}"
 cd /usr/local/bin
 wget https://download.mikrotik.com/routeros/winbox/4.0beta17/WinBox_Linux.zip
@@ -224,7 +236,9 @@ Type=Application
 Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
 
+########################################################################
 echo -e "${yellow}Create user...${white}"
 adduser user
 
+########################################################################
 echo -e "${green}DONE.${white}"
