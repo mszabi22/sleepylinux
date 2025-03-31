@@ -48,7 +48,7 @@ apt upgrade -y
 echo -e "${yellow}Apps install...${white}"
 apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
     firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman vlc thunderbird thunderbird-l10n-hu \
-    gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gocryptfs mugshot keepassxc tor geany ntpsec zenity\
+    gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick alacarte gocryptfs mugshot keepassxc tor geany ntpsec zenity\
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
     syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer \
     ntpdate firewalld firewall-config firewall-applet zulucrypt-gui krita krita-l10n nfs-common stacer
