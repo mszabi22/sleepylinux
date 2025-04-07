@@ -54,7 +54,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick alacarte gocryptfs mugshot keepassxc tor geany ntpsec zenity\
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
     syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer \
-    ntpdate firewalld firewall-config firewall-applet zulucrypt-gui krita krita-l10n nfs-common
+    ntpdate firewalld firewall-config firewall-applet krita krita-l10n nfs-common
     #ttf-mscorefonts-installer
 
 echo "%sudo ALL = (ALL:ALL) NOPASSWD: /usr/bin/firewall-cmd" >> /etc/sudoers
@@ -189,7 +189,6 @@ Enabled=true" > /usr/share/applications/standard-notes.desktop
 echo -e "${yellow}AEScrypt install...${white}"
 wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.2.3-Linux-x86_64.deb
 dpkg -i aescrypt_gui-4.2.3-Linux-x86_64.deb
-
 ########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
 cd
@@ -221,24 +220,24 @@ rm teamviewer_amd64.deb
 
 ########################################################################
 echo -e "${yellow}Winbox install...${white}"
-cd /usr/local/bin
+mkdir /opt/winbox
+cd /opt/winbox
 wget https://download.mikrotik.com/routeros/winbox/4.0beta18/WinBox_Linux.zip
 unzip WinBox_Linux.zip
 rm WinBox_Linux.zip
 echo "[Desktop Entry]
 Name=Winbox
-Exec=/usr/local/bin/WinBox
-Icon=/usr/local/bin/assets/img/winbox.png
+Exec=/opt/winbox/WinBox
+Icon=/opt/winbox/assets/img/winbox.png
 
 Encoding=UTF-8
 ExecutionMode=normal
 Type=Application
 Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
-
+chmod -R 777 /opt/winbox/
 ########################################################################
 echo -e "${yellow}Create user...${white}"
 adduser user
-
 ########################################################################
 echo -e "${green}DONE.${white}"
