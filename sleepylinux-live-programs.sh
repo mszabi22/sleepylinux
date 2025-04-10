@@ -243,3 +243,4 @@ echo -e "${yellow}Create user...${white}"
 adduser user
 ########################################################################
 echo -e "${green}DONE.${white}"
+echo "LO!!!"
