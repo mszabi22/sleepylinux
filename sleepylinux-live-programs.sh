@@ -57,12 +57,6 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     ntpdate firewalld firewall-config firewall-applet krita krita-l10n nfs-common ttf-mscorefonts-installer obs-studio ffmpeg
 
 echo "%sudo ALL = (ALL:ALL) NOPASSWD: /usr/bin/firewall-cmd" >> /etc/sudoers
-
-echo -e "${yellow}Flatpak programok telepítése...${white}"
-apt install flatpak
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y com.obsproject.Studio
-
 ########################################################################
 echo -e "${yellow}Admin Tools? (i/n)${white}"
 read ADMINTOOLS_INSTALL
@@ -243,6 +237,11 @@ chmod -R 777 /opt/winbox/
 ########################################################################
 echo -e "${yellow}Create user...${white}"
 adduser user
+########################################################################
+echo -e "${yellow}Flatpak programok telepítése...${white}"
+apt install flatpak
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install -y com.obsproject.Studio
 ########################################################################
 echo -e "${green}DONE.${white}"
 echo "LO!!!"
