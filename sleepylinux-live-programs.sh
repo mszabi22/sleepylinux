@@ -238,11 +238,6 @@ chmod -R 777 /opt/winbox/
 echo -e "${yellow}Create user...${white}"
 adduser user
 ########################################################################
-echo -e "${yellow}Flatpak programok telepítése...${white}"
-apt install flatpak
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y com.obsproject.Studio
-########################################################################
 echo -e "${green}DONE.${white}"
 apt-get remove libreoffice-*
 apt autoremove -y
