@@ -244,4 +244,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 sudo flatpak install -y com.obsproject.Studio
 ########################################################################
 echo -e "${green}DONE.${white}"
-echo "LO!!!"
+apt-get remove libreoffice-*
+apt autoremove -y
+echo "LibreOffice install!!!"
