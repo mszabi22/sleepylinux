@@ -5,7 +5,7 @@ blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
 
-TOR_VERZIO="14.0.9"
+TOR_VERZIO="14.5.1"
 
 ########################################################################
 echo -e "${yellow}rc-local setting...${white}"
