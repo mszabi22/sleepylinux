@@ -187,6 +187,29 @@ Enabled=true" > /usr/share/applications/standard-notes.desktop
 echo -e "${yellow}AEScrypt install...${white}"
 wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.2.3-Linux-x86_64.deb
 dpkg -i aescrypt_gui-4.2.3-Linux-x86_64.deb
+
+########################################################################
+echo -e "${yellow}Cryptomator install...${white}"
+cd /usr/local/bin
+wget https://github.com/cryptomator/cryptomator/releases/download/1.16.0/cryptomator-1.16.0-x86_64.AppImage
+mv cryptomator-1.16.0-x86_64.AppImage cryptomator
+chmod +x cryptomator
+cd /usr/share/icons/
+wget https://cryptomator.org/img/logo.svg
+mv logo.svg cryptomator.svg
+
+echo "[Desktop Entry]
+Name=Cryptomator
+Exec=/usr/local/bin/cryptomator
+Icon=/usr/share/icons/cryptomator.svg
+
+Encoding=UTF-8
+ExecutionMode=normal
+Type=Application
+Categories=Office;
+Keywords=encryption,filesystem
+Enabled=true
+" > /usr/share/applications/cryptomator.desktop
 ########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
 cd
