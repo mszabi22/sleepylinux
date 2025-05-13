@@ -53,7 +53,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman vlc thunderbird thunderbird-l10n-hu \
     gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick alacarte gocryptfs mugshot keepassxc tor geany ntpsec zenity\
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
-    syncthing qrencode audacious molly-guard kleopatra deluge borgbackup vorta ssh-askpass clamtk mpv smplayer \
+    syncthing qrencode audacious molly-guard kleopatra deluge clamtk mpv smplayer \
     ntpdate firewalld firewall-config firewall-applet krita krita-l10n nfs-common ttf-mscorefonts-installer obs-studio ffmpeg
 
 echo "%sudo ALL = (ALL:ALL) NOPASSWD: /usr/bin/firewall-cmd" >> /etc/sudoers
