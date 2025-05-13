@@ -64,7 +64,7 @@ if [ $ADMINTOOLS_INSTALL = 'i' ]; then
 echo -e "${yellow}Admin Tools telepítése...${white}"
 	apt install gprename gparted netdiscover sshuttle grub-customizer remmina remmina-plugin-rdp remmina-plugin-vnc \
 	net-tools dnsutils arping chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping \
-	wireshark tigervnc-viewer tigervnc-tools -y
+	wireshark tigervnc-viewer tigervnc-tools bleachbit -y
 fi
 
 ########################################################################
