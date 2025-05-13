@@ -242,7 +242,7 @@ rm teamviewer_amd64.deb
 echo -e "${yellow}Winbox install...${white}"
 mkdir /opt/winbox
 cd /opt/winbox
-wget https://download.mikrotik.com/routeros/winbox/4.0beta18/WinBox_Linux.zip
+wget https://download.mikrotik.com/routeros/winbox/4.0beta20/WinBox_Linux.zip
 unzip WinBox_Linux.zip
 rm WinBox_Linux.zip
 echo "[Desktop Entry]
