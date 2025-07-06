@@ -150,26 +150,6 @@ cat signal-desktop-keyring.gpg | tee /usr/share/keyrings/signal-desktop-keyring.
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | tee /etc/apt/sources.list.d/signal-xenial.list
 apt update && sudo apt install signal-desktop
 rm signal-desktop-keyring.gpg
-
-########################################################################
-echo -e "${yellow}Viber install...${white}"
-cd /usr/local/bin
-wget https://download.cdn.viber.com/desktop/Linux/viber.AppImage
-mv viber.AppImage viber
-chmod +x viber
-cd /usr/share/icons
-wget -O viber-logo.png https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzh.wizcase.com%2Fwp-content%2Fuploads%2F2020%2F02%2FVIBER-LOGO-1.png&f=1&nofb=1&ipt=95f0c86d8e9533c00e85b8621237d03bae171b5e9a253152513eb3bb4fa223e1&ipo=images
-echo "[Desktop Entry]
-Name=Viber
-Exec=/usr/local/bin/viber
-Icon=/usr/share/icons/viber-logo.png
-
-Encoding=UTF-8
-ExecutionMode=normal
-Type=Application
-Categories=Network;
-Enabled=true" > /usr/share/applications/viber.desktop  
-
 ########################################################################
 echo -e "${yellow}Standard Notes install...${white}"
 cd /usr/share/icons
@@ -194,28 +174,6 @@ echo -e "${yellow}AEScrypt install...${white}"
 wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.2.3-Linux-x86_64.deb
 dpkg -i aescrypt_gui-4.2.3-Linux-x86_64.deb
 
-########################################################################
-echo -e "${yellow}Cryptomator install...${white}"
-cd /usr/local/bin
-wget https://github.com/cryptomator/cryptomator/releases/download/1.16.0/cryptomator-1.16.0-x86_64.AppImage
-mv cryptomator-1.16.0-x86_64.AppImage cryptomator
-chmod +x cryptomator
-cd /usr/share/icons/
-wget https://cryptomator.org/img/logo.svg
-mv logo.svg cryptomator.svg
-
-echo "[Desktop Entry]
-Name=Cryptomator
-Exec=/usr/local/bin/cryptomator
-Icon=/usr/share/icons/cryptomator.svg
-
-Encoding=UTF-8
-ExecutionMode=normal
-Type=Application
-Categories=Office;
-Keywords=encryption,filesystem
-Enabled=true
-" > /usr/share/applications/cryptomator.desktop
 ########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
 cd
@@ -263,6 +221,10 @@ Type=Application
 Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
 chmod -R 777 /opt/winbox/
+
+########################################################################
+echo -e "${yellow}Create user...${white}"
+adduser user
 ########################################################################
 echo -e "${green}DONE.${white}"
 apt-get remove libreoffice-*
