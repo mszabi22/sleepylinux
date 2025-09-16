@@ -219,8 +219,8 @@ Enabled=true" > /usr/share/applications/winbox.desktop
 chmod -R 777 /opt/winbox/
 
 ########################################################################
-#echo -e "${yellow}Create user...${white}"
-#adduser user
+echo -e "${yellow}Create user...${white}"
+adduser user
 ########################################################################
 #echo -e "${green}DONE.${white}"
 #apt-get remove libreoffice-*
