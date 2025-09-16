@@ -169,17 +169,16 @@ Enabled=true" > /usr/share/applications/standard-notes.desktop
 
 ########################################################################
 echo -e "${yellow}AEScrypt install...${white}"
-wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.2.3-Linux-x86_64.deb
-dpkg -i aescrypt_gui-4.2.3-Linux-x86_64.deb
+wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.3.1-Linux-x86_64.deb
+dpkg -i aescrypt_gui-*.deb
 
 ########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
 cd
-wget https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-Debian-12-amd64.deb
-dpkg -i veracrypt-1.26.7-Debian-12-amd64.deb
+wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-12-amd64.deb
+dpkg -i veracrypt-*.deb
 apt-get -f install -y
-rm veracrypt-1.26.7-Debian-12-amd64.deb
-apt-get -f install -y
+rm veracrypt-*.deb
 echo "[Desktop Entry]
 Type=Application
 Name=VeraCrypt
@@ -198,7 +197,6 @@ echo -e "${yellow}TeamViewer install...${white}"
 cd
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb
-apt-get -f install -y
 rm teamviewer_amd64.deb
 
 ########################################################################
