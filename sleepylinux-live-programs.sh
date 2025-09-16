@@ -47,7 +47,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick alacarte gocryptfs mugshot keepassxc tor geany ntpsec zenity\
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
     syncthing qrencode audacious molly-guard kleopatra deluge clamtk mpv smplayer \
-    nfs-common ttf-mscorefonts-installer obs-studio ffmpeg
+    nfs-common ttf-mscorefonts-installer obs-studio ffmpeg bash-completion
 ########################################################################
 echo -e "${yellow}Admin Tools? (i/n)${white}"
 read ADMINTOOLS_INSTALL
