@@ -7,9 +7,9 @@ lb config noauto \
 	--architectures amd64 \
 	--linux-flavours amd64:amd64 \
 	--binary-images iso-hybrid \
-	--distribution bookworm \
+	--distribution trixie \
 	--debian-installer live \
-	--debian-installer-distribution bookworm \
+	--debian-installer-distribution trixie \
 	--debian-installer-gui true \
 	--archive-areas "contrib main non-free non-free-firmware" \
 	--debootstrap-options "--variant=minbase" \

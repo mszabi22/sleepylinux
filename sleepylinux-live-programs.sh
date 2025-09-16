@@ -5,7 +5,7 @@ blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
 
-TOR_VERZIO="14.5.4"
+TOR_VERZIO="14.5.6"
 
 ########################################################################
 echo -e "${yellow}rc-local setting...${white}"
@@ -39,11 +39,11 @@ timedatectl set-ntp on
 
 ########################################################################
 echo -e "${yellow}Repository setting...${white}"
-echo "deb https://ftp.debian.org/debian/ bookworm contrib main non-free non-free-firmware contrib
-deb https://ftp.debian.org/debian/ bookworm-updates contrib main non-free non-free-firmware contrib
-deb https://ftp.debian.org/debian/ bookworm-proposed-updates contrib main non-free non-free-firmware contrib
-deb https://ftp.debian.org/debian/ bookworm-backports contrib main non-free non-free-firmware contrib
-deb https://security.debian.org/debian-security/ bookworm-security contrib main non-free non-free-firmware contrib" > /etc/apt/sources.list
+echo "deb https://ftp.debian.org/debian/ trixie contrib main non-free non-free-firmware contrib
+deb https://ftp.debian.org/debian/ trixie-updates contrib main non-free non-free-firmware contrib
+deb https://ftp.debian.org/debian/ trixie-proposed-updates contrib main non-free non-free-firmware contrib
+deb https://ftp.debian.org/debian/ trixie-backports contrib main non-free non-free-firmware contrib
+deb https://security.debian.org/debian-security/ trixie-security contrib main non-free non-free-firmware contrib" > /etc/apt/sources.list
 apt update
 apt upgrade -y
 
@@ -207,7 +207,7 @@ rm teamviewer_amd64.deb
 echo -e "${yellow}Winbox install...${white}"
 mkdir /opt/winbox
 cd /opt/winbox
-wget https://download.mikrotik.com/routeros/winbox/4.0beta20/WinBox_Linux.zip
+wget https://download.mikrotik.com/routeros/winbox/4.0beta30/WinBox_Linux.zip
 unzip WinBox_Linux.zip
 rm WinBox_Linux.zip
 echo "[Desktop Entry]
@@ -224,7 +224,7 @@ chmod -R 777 /opt/winbox/
 
 ########################################################################
 echo -e "${yellow}Create user...${white}"
-adduser user
+adduser liveuser
 ########################################################################
 echo -e "${green}DONE.${white}"
 apt-get remove libreoffice-*
