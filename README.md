@@ -1,5 +1,5 @@
 # SleepyLinux is just a customized Debian :)
-- OS: Debian 12
+- OS: Debian 13
 - Architecture: amd64
 - Locales=hu_HU.UTF-8 
 - Keyboard-layouts=hu 
@@ -13,9 +13,6 @@
 
 <ins>Messengers:</ins>
 - Signal
-- Session Messenger
-- Viber
-- SimpleX.chat
 
 <ins>Office:</ins>
 - LibreOffice
@@ -30,7 +27,6 @@
 
 <ins>Remote support:</ins>
 - TeamViewer
-- RustDesk
 
 <ins>Config tools:</ins>
 - Winbox
@@ -42,14 +38,12 @@ mc lshw wireshark gparted ntfs-3g hfsprogs partclone clonezilla sshfs nano firmw
 firmware-brcm80211 blueman ttf-mscorefonts-installer vlc thunderbird thunderbird-l10n-hu gimp simple-scan \
 gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gprename gocryptfs mugshot geany netdiscover sshuttle \
 grub-customizer ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping zenity \
-libpam-google-authenticator gnome-system-tools wireguard wireguard-tools wine64 chntpw gnome-online-accounts\
-ecryptfs-utils hardinfo gnome-mahjongg quadrapassel gnome-chess acpidump borgbackup vorta ssh-askpass freecad \
-sysbench clamtk dislocker firewalld realvnc krita
+libpam-google-authenticator gnome-system-tools wireguard wireguard-tools chntpw gnome-online-accounts\
+ecryptfs-utils hardinfo gnome-mahjongg quadrapassel gnome-chess acpidump ssh-askpass sysbench clamtk dislocker
 
 ## <ins>Method of preparation:</ins>
 1. Run debian-live-build.sh
 2. Copy to chroot: debian-live-programs.sh, etc, usr/local/bin
 3. Run debian-live-programs.sh
 
-[Download ISO](https://drive.google.com/drive/u/1/folders/1QRUDmG91F10liZ2EVjozCtnPbFq07ill)
 
