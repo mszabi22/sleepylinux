@@ -13,7 +13,7 @@ lb config noauto \
 	--debian-installer-gui true \
 	--archive-areas "contrib main non-free non-free-firmware" \
 	--debootstrap-options "--variant=minbase" \
-	--bootappend-live "boot=live persistence components hostname=SleepyLinux locales=hu_HU.UTF-8 keyboard-layouts=hu timezone=Europe/Budapest username=live" \
+	--bootappend-live "boot=live persistence components hostname=SleepyLinux locales=hu_HU.UTF-8 keyboard-layouts=hu timezone=Europe/Budapest" \
 	--image-name "SleepyLinux" \
 	--iso-application SleepyLinux \
 	--iso-preparer `date +%Y.%m.%d.` \
