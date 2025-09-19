@@ -155,6 +155,7 @@ echo -e "${yellow}AEScrypt install...${white}"
 cd
 wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.3.1-Linux-x86_64.deb
 dpkg -i aescrypt_gui-*.deb
+rm aescrypt_gui-*.deb
 ########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
 cd /usr/local/bin/
