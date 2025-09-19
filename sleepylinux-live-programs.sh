@@ -48,6 +48,12 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
     syncthing qrencode audacious molly-guard kleopatra deluge clamtk mpv smplayer \
     nfs-common ttf-mscorefonts-installer obs-studio ffmpeg bash-completion
+
+echo -e "${yellow}Flatpak beállítása...${white}"
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo    
+echo -e "${yellow}LocalSend install...${white}"    
+flatpak install flathub org.localsend.localsend_app    
+    
 ########################################################################
 echo -e "${yellow}Admin Tools? (i/n)${white}"
 read ADMINTOOLS_INSTALL
@@ -161,8 +167,8 @@ echo -e "${yellow}VeraCrypt install...${white}"
 cd 
 wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-12-amd64.deb
 dpkg -i veracrypt-1.26.24-Debian-12-amd64.deb
-apt-get -f install
-
+apt-get -f install -y
+cd /usr/share/icons
 wget -O veracrypt-icon.png https://veracrypt.io/en/VeraCrypt128x128.png
 echo "[Desktop Entry]
 Type=Application
