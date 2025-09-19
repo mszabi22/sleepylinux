@@ -49,10 +49,12 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     syncthing qrencode audacious molly-guard kleopatra deluge clamtk mpv smplayer \
     nfs-common ttf-mscorefonts-installer obs-studio ffmpeg bash-completion
 
-echo -e "${yellow}Flatpak beállítása...${white}"
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo    
-echo -e "${yellow}LocalSend install...${white}"    
-flatpak install flathub org.localsend.localsend_app    
+########################################################################
+echo -e "${yellow}LocalSend install...${white}"
+wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
+dpkg -i LocalSend-1.17.0-linux-x86-64.deb
+apt-get -f install -y
+rm LocalSend-1.17.0-linux-x86-64.deb   
     
 ########################################################################
 echo -e "${yellow}Admin Tools? (i/n)${white}"
