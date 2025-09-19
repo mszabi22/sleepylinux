@@ -138,8 +138,7 @@ echo -e "${yellow}Standard Notes install...${white}"
 cd /usr/share/icons
 wget http://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/standard-notes-icon.png
 cd /usr/local/bin
-wget https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fdesktop%403.194.13/standard-notes-3.194.13-linux-x86_64.AppImage
-mv standard-notes-*.AppImage standard-notes
+wget -O standard-notes https://github.com/standardnotes/app/releases/download/%40standardnotes/desktop%403.198.5/standard-notes-3.198.5-linux-x86_64.AppImage
 chmod a+x standard-notes
 echo "[Desktop Entry]
 Name=Standard Notes
@@ -151,32 +150,29 @@ ExecutionMode=normal
 Type=Application
 Categories=Office;
 Enabled=true" > /usr/share/applications/standard-notes.desktop
-
 ########################################################################
 echo -e "${yellow}AEScrypt install...${white}"
+cd
 wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.3.1-Linux-x86_64.deb
 dpkg -i aescrypt_gui-*.deb
-
 ########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
-cd
-wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-12-amd64.deb
-dpkg -i veracrypt-*.deb
-apt-get -f install -y
-rm veracrypt-*.deb
+cd /usr/local/bin/
+wget -O veracrypt https://launchpad.net/veracrypt/trunk/1.26.24/+download/VeraCrypt-1.26.24-x86_64.AppImage
+cd /usr/share/icons/
+wget -O veracrypt-icon.png https://veracrypt.io/en/VeraCrypt128x128.png
 echo "[Desktop Entry]
 Type=Application
 Name=VeraCrypt
 GenericName=VeraCrypt volume manager
 Comment=Create and mount VeraCrypt encrypted volumes
-Icon=veracrypt
-Exec=/usr/bin/veracrypt %f
+Icon=/usr/share/icons/veracrypt-icon.png
+Exec=/usr/local/bin/veracrypt
 Categories=Office;
 Keywords=encryption,filesystem
 Terminal=false
 MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
-echo "%sudo  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
-
+echo "%wheel  ALL = (ALL:ALL) NOPASSWD: /usr/local/bin/veracrypt" >> /etc/sudoers
 ########################################################################
 echo -e "${yellow}TeamViewer install...${white}"
 cd
