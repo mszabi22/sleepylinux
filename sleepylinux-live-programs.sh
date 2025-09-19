@@ -158,9 +158,11 @@ dpkg -i aescrypt_gui-*.deb
 rm aescrypt_gui-*.deb
 ########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
-cd /usr/local/bin/
-wget -O veracrypt https://launchpad.net/veracrypt/trunk/1.26.24/+download/VeraCrypt-1.26.24-x86_64.AppImage
-cd /usr/share/icons/
+cd 
+wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-12-amd64.deb
+dpkg -i veracrypt-1.26.24-Debian-12-amd64.deb
+apt-get -f install
+
 wget -O veracrypt-icon.png https://veracrypt.io/en/VeraCrypt128x128.png
 echo "[Desktop Entry]
 Type=Application
@@ -168,12 +170,12 @@ Name=VeraCrypt
 GenericName=VeraCrypt volume manager
 Comment=Create and mount VeraCrypt encrypted volumes
 Icon=/usr/share/icons/veracrypt-icon.png
-Exec=/usr/local/bin/veracrypt
+Exec=veracrypt %f
 Categories=Office;
 Keywords=encryption,filesystem
 Terminal=false
 MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
-echo "%wheel  ALL = (ALL:ALL) NOPASSWD: /usr/local/bin/veracrypt" >> /etc/sudoers
+echo "%wheel  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
 ########################################################################
 echo -e "${yellow}TeamViewer install...${white}"
 cd
