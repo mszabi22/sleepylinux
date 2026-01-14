@@ -13,6 +13,7 @@
 
 <ins>Messengers:</ins>
 - Signal
+- Viber
 
 <ins>Office:</ins>
 - LibreOffice
@@ -31,15 +32,6 @@
 <ins>Config tools:</ins>
 - Winbox
 - Active Directory member support script
-
-<ins>Other added programs:</ins>
-
-mc lshw wireshark gparted ntfs-3g hfsprogs partclone clonezilla sshfs nano firmware-iwlwifi firmware-atheros\
-firmware-brcm80211 blueman ttf-mscorefonts-installer vlc thunderbird thunderbird-l10n-hu gimp simple-scan \
-gnupg gnupg2 gnupg1 eog zstd imagemagick menulibre gprename gocryptfs mugshot geany netdiscover sshuttle \
-grub-customizer ntpsec remmina remmina-plugin-rdp remmina-plugin-vnc net-tools dnsutils arping zenity \
-libpam-google-authenticator gnome-system-tools wireguard wireguard-tools chntpw gnome-online-accounts\
-ecryptfs-utils hardinfo gnome-mahjongg quadrapassel gnome-chess acpidump ssh-askpass sysbench clamtk dislocker
 
 ## <ins>Method of preparation:</ins>
 1. Run debian-live-build.sh
