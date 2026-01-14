@@ -5,7 +5,8 @@ blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
 
-TOR_VERZIO="14.5.6"
+sudo apt install jq -y
+TOR_VERZIO="$(curl -s https://aus1.torproject.org/torbrowser/update_3/release/downloads.json | jq -r ".version")"
 
 ########################################################################
 echo -e "${yellow}rc-local setting...${white}"
@@ -43,27 +44,25 @@ apt upgrade -y
 ########################################################################
 echo -e "${yellow}Apps install...${white}"
 apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends apt-transport-https rsync curl wget \
-    firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman vlc thunderbird thunderbird-l10n-hu \
-    gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick alacarte gocryptfs mugshot keepassxc tor geany ntpsec zenity\
+    firmware-iwlwifi firmware-atheros firmware-brcm80211 blueman ttf-mscorefonts-installer vlc thunderbird thunderbird-l10n-hu \
+    gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick alacarte gocryptfs mugshot keepassxc tor geany ntpsec \
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
-    syncthing qrencode audacious molly-guard kleopatra deluge clamtk mpv smplayer \
-    nfs-common ttf-mscorefonts-installer obs-studio ffmpeg bash-completion screen
-
+    syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge mpv smplayer \
+    obs-studio ffmpeg bleachbit flatpak handbrake
 ########################################################################
 echo -e "${yellow}LocalSend install...${white}"
 wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
 dpkg -i LocalSend-1.17.0-linux-x86-64.deb
 apt-get -f install -y
-rm LocalSend-1.17.0-linux-x86-64.deb   
-    
+rm LocalSend-1.17.0-linux-x86-64.deb       
 ########################################################################
 echo -e "${yellow}Admin Tools? (i/n)${white}"
 read ADMINTOOLS_INSTALL
 if [ $ADMINTOOLS_INSTALL = 'i' ]; then
 echo -e "${yellow}Admin Tools telepítése...${white}"
 	apt install gprename gparted netdiscover sshuttle grub-customizer remmina remmina-plugin-rdp remmina-plugin-vnc \
-	net-tools dnsutils arping chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping \
-	wireshark tigervnc-viewer tigervnc-tools bleachbit -y
+	net-tools dnsutils arping zenity chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping \
+	wireshark tigervnc-viewer tigervnc-tools -y
 fi
 ########################################################################
 echo -e "${yellow}SSH setting...${white}"
@@ -142,39 +141,24 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 apt update && sudo apt install signal-desktop
 rm signal-desktop-keyring.gpg
 ########################################################################
-echo -e "${yellow}RetroShare install...${white}"
-cd /usr/share/icons
-wget -O retroshare-logo.png https://retroshare.cc/img/retroshare-symbol.png
+echo -e "${yellow}Viber install...${white}"
 cd /usr/local/bin
-wget -O retroshare https://github.com/RetroShare/RetroShare/releases/download/v0.6.7.2/RetroShare-0.6.7-2.glibc2.29-x86_64.AppImage
-chmod a+x retroshare
+wget -O viber https://download.cdn.viber.com/desktop/Linux/viber.AppImage
+chmod +x viber
+
+cd /usr/share/icons
+wget -O viber-logo.png https://www.freepnglogos.com/uploads/viber-png/viber-top-way-video-call-faster-full-tronzi-6.png
+
 echo "[Desktop Entry]
-Name=RetrroShare
-Exec=/usr/local/bin/retroshare
-Icon=/usr/share/icons/retroshare-logo.png
+Name=Viber
+Exec=/usr/local/bin/viber
+Icon=/usr/share/icons/viber-logo.png
 
 Encoding=UTF-8
 ExecutionMode=normal
 Type=Application
 Categories=Network;
-Enabled=true" > /usr/share/applications/retroshare.desktop
-########################################################################
-echo -e "${yellow}SimpleX.chat install...${white}"
-cd /usr/share/icons
-wget -O simplex-logo.png https://simplex.chat/img/new/logo-dark.png
-cd /usr/local/bin
-wget -O simplex https://github.com/simplex-chat/simplex-chat/releases/latest/download/simplex-desktop-x86_64.AppImage
-chmod a+x simplex
-echo "[Desktop Entry]
-Name=SimpleX Chat
-Exec=/usr/local/bin/simplex
-Icon=/usr/share/icons/simplex-logo.png
-
-Encoding=UTF-8
-ExecutionMode=normal
-Type=Application
-Categories=Network;
-Enabled=true" > /usr/share/applications/simplex.desktop
+Enabled=true" > /usr/share/applications/viber.desktop
 ########################################################################
 echo -e "${yellow}Standard Notes install...${white}"
 cd /usr/share/icons
@@ -200,49 +184,50 @@ dpkg -i aescrypt_gui-*.deb
 rm aescrypt_gui-*.deb
 ########################################################################
 echo -e "${yellow}VeraCrypt install...${white}"
-cd 
-wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-12-amd64.deb
-dpkg -i veracrypt-1.26.24-Debian-12-amd64.deb
-apt-get -f install -y
-cd /usr/share/icons
-wget -O veracrypt-icon.png https://veracrypt.io/en/VeraCrypt128x128.png
-echo "[Desktop Entry]
-Type=Application
-Name=VeraCrypt
-GenericName=VeraCrypt volume manager
-Comment=Create and mount VeraCrypt encrypted volumes
-Icon=/usr/share/icons/veracrypt-icon.png
-Exec=veracrypt %f
-Categories=Office;
-Keywords=encryption,filesystem
-Terminal=false
-MimeType=application/x-veracrypt-volume;application/x-truecrypt-volume;" > /usr/share/applications/veracrypt.desktop
-echo "%wheel  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
+if [ `cat /etc/issue | grep 12 | wc -l` = "1" ]; then
+	wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-12-amd64.deb
+	dpkg -i veracrypt-1.26.24-Debian-12-amd64.deb
+	apt-get -f install -y
+fi
+
+if [ `cat /etc/issue | grep 13 | wc -l` = "1" ]; then
+	wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-13-amd64.deb
+	dpkg -i veracrypt-1.26.24-Debian-13-amd64.deb
+	apt-get -f install -y
+fi
+echo "%sudo  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
 ########################################################################
 echo -e "${yellow}TeamViewer install...${white}"
 cd
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb
 rm teamviewer_amd64.deb
-
 ########################################################################
+echo -e "${yellow}WinBox? (i/n)${white}"
+read WINBOX_INSTALL
+if [ $WINBOX_INSTALL = 'i' ]; then
 echo -e "${yellow}Winbox install...${white}"
-mkdir /opt/winbox
-cd /opt/winbox
-wget https://download.mikrotik.com/routeros/winbox/4.0beta30/WinBox_Linux.zip
+cd /opt
+mkdir winbox
+cd winbox
+wget https://download.mikrotik.com/routeros/winbox/4.0beta44/WinBox_Linux.zip
 unzip WinBox_Linux.zip
+ln -s /opt/winbox/WinBox /usr/local/bin/winbox
+ln -s /opt/winbox/assets/img/winbox.png /usr/share/icons/winbox.png
 rm WinBox_Linux.zip
+chmod -R 777 /opt/winbox
+
 echo "[Desktop Entry]
 Name=Winbox
-Exec=/opt/winbox/WinBox
-Icon=/opt/winbox/assets/img/winbox.png
-
+Exec=/usr/local/bin/winbox
+Icon=/usr/share/icons/winbox.png
+ 
 Encoding=UTF-8
 ExecutionMode=normal
 Type=Application
 Categories=Application;Network;
 Enabled=true" > /usr/share/applications/winbox.desktop
-chmod -R 777 /opt/winbox/
+fi
 
 echo -e "${yellow}Create user...${white}"
 adduser user
