@@ -48,13 +48,14 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     gimp simple-scan gnupg gnupg2 gnupg1 eog zstd imagemagick alacarte gocryptfs mugshot keepassxc tor geany ntpsec \
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
     syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge mpv smplayer \
-    obs-studio ffmpeg bleachbit flatpak handbrake
+    obs-studio ffmpeg bleachbit flatpak handbrake gnome-calendar greybird-gtk-theme elementary-xfce-icon-theme adwaita-icon-theme \
+	tango-icon-theme xfwm4-theme-breeze htop btop linux-cpupower cpupower-gui onionshare fastfetch
 ########################################################################
 echo -e "${yellow}LocalSend install...${white}"
 wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
 dpkg -i LocalSend-1.17.0-linux-x86-64.deb
 apt-get -f install -y
-rm LocalSend-1.17.0-linux-x86-64.deb       
+rm LocalSend-1.17.0-linux-x86-64.deb        
 ########################################################################
 echo -e "${yellow}Admin Tools? (i/n)${white}"
 read ADMINTOOLS_INSTALL
@@ -62,7 +63,30 @@ if [ $ADMINTOOLS_INSTALL = 'i' ]; then
 echo -e "${yellow}Admin Tools telepítése...${white}"
 	apt install gprename gparted netdiscover sshuttle grub-customizer remmina remmina-plugin-rdp remmina-plugin-vnc \
 	net-tools dnsutils arping zenity chntpw hardinfo acpidump acpidump sysbench dislocker stress s-tui traceroute iputils-ping \
-	wireshark tigervnc-viewer tigervnc-tools -y
+	wireshark tigervnc-viewer tigervnc-tools
+	
+	echo -e "${yellow}Winbox install...${white}"
+	cd /opt
+	mkdir winbox
+	cd winbox
+	wget https://download.mikrotik.com/routeros/winbox/4.0rc1/WinBox_Linux.zip
+	unzip WinBox_Linux.zip
+	ln -s /opt/winbox/WinBox /usr/local/bin/winbox
+	ln -s /opt/winbox/assets/img/winbox.png /usr/share/icons/winbox.png
+	rm WinBox_Linux.zip
+	chmod -R 777 /opt/winbox
+	
+echo "[Desktop Entry]
+Name=Winbox
+Exec=/usr/local/bin/winbox
+Icon=/usr/share/icons/winbox.png
+ 
+Encoding=UTF-8
+ExecutionMode=normal
+Type=Application
+Categories=Application;Network;
+Enabled=true" > /usr/share/applications/winbox.desktop
+	
 fi
 ########################################################################
 echo -e "${yellow}SSH setting...${white}"
@@ -196,6 +220,7 @@ if [ `cat /etc/issue | grep 13 | wc -l` = "1" ]; then
 	apt-get -f install -y
 fi
 echo "%sudo  ALL = (ALL:ALL) NOPASSWD: /usr/bin/veracrypt" >> /etc/sudoers
+
 ########################################################################
 echo -e "${yellow}TeamViewer install...${white}"
 cd
@@ -203,31 +228,6 @@ wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb
 rm teamviewer_amd64.deb
 ########################################################################
-echo -e "${yellow}WinBox? (i/n)${white}"
-read WINBOX_INSTALL
-if [ $WINBOX_INSTALL = 'i' ]; then
-echo -e "${yellow}Winbox install...${white}"
-cd /opt
-mkdir winbox
-cd winbox
-wget https://download.mikrotik.com/routeros/winbox/4.0beta44/WinBox_Linux.zip
-unzip WinBox_Linux.zip
-ln -s /opt/winbox/WinBox /usr/local/bin/winbox
-ln -s /opt/winbox/assets/img/winbox.png /usr/share/icons/winbox.png
-rm WinBox_Linux.zip
-chmod -R 777 /opt/winbox
-
-echo "[Desktop Entry]
-Name=Winbox
-Exec=/usr/local/bin/winbox
-Icon=/usr/share/icons/winbox.png
- 
-Encoding=UTF-8
-ExecutionMode=normal
-Type=Application
-Categories=Application;Network;
-Enabled=true" > /usr/share/applications/winbox.desktop
-fi
-
 echo -e "${yellow}Create user...${white}"
 adduser user
+echo "LibreOffice!!!"
