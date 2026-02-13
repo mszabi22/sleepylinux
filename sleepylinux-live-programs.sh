@@ -230,4 +230,9 @@ rm teamviewer_amd64.deb
 ########################################################################
 echo -e "${yellow}Create user...${white}"
 adduser user
-echo "LibreOffice!!!"
+
+echo -e "${yellow}LibreOffice eltávolítása...${white}"
+sudo apt remove --purge libreoffice-*
+sudo apt autoremove
+sudo apt clean
+echo "Új LibreOffice install!!!"

@@ -8,7 +8,7 @@ lb config noauto \
 	--linux-flavours amd64:amd64 \
 	--binary-images iso-hybrid \
 	--distribution trixie \
-	--debian-installer live \
+	--debian-installer false \
 	--debian-installer-distribution trixie \
 	--debian-installer-gui true \
 	--archive-areas "contrib main non-free non-free-firmware" \
