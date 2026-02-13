@@ -226,9 +226,6 @@ wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb
 rm teamviewer_amd64.deb
 ########################################################################
-echo -e "${yellow}Create user...${white}"
-adduser user
-
 echo -e "${yellow}LibreOffice eltávolítása...${white}"
 sudo apt remove --purge libreoffice-*
 sudo apt autoremove
