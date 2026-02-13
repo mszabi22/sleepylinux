@@ -24,3 +24,9 @@ echo "mc network-manager net-tools wget openssh-client task-xfce-desktop xserver
 partclone sshfs nano calamares calamares-settings-debian apt-utils user-setup sudo dialog live-config live-config-systemd" > config/package-lists/my.list.chroot
 # # #
 lb build
+
+
+### Módosítás ###
+lb chroot
+# Kilépés  után:
+lb clean --binary
