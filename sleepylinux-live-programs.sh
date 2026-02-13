@@ -4,10 +4,6 @@ green='\e[0;32m'
 blue='\e[0;34m'
 yellow='\e[0;33m'
 white='\e[0;37m'
-
-sudo apt install jq -y
-TOR_VERZIO="$(curl -s https://aus1.torproject.org/torbrowser/update_3/release/downloads.json | jq -r ".version")"
-
 ########################################################################
 echo -e "${yellow}rc-local setting...${white}"
 echo '[Unit]
@@ -144,6 +140,8 @@ Exec=/usr/bin/brave-browser-stable --incognito
 
 ########################################################################
 echo -e "${yellow}Tor Browser install...${white}"
+sudo apt install jq -y
+TOR_VERZIO="$(curl -s https://aus1.torproject.org/torbrowser/update_3/release/downloads.json | jq -r ".version")"
 cd /opt
 wget https://www.torproject.org/dist/torbrowser/$TOR_VERZIO/tor-browser-linux-x86_64-$TOR_VERZIO.tar.xz
 tar -xvJf tor-browser-*.tar.xz
