@@ -184,7 +184,7 @@ Enabled=true" > /usr/share/applications/viber.desktop
 ########################################################################
 echo -e "${yellow}Standard Notes install...${white}"
 cd /usr/share/icons
-wget http://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/standard-notes-icon.png
+wget https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/standard-notes.png
 cd /usr/local/bin
 wget -O standard-notes https://github.com/standardnotes/app/releases/download/%40standardnotes/desktop%403.201.18/standard-notes-3.201.18-linux-x86_64.AppImage
 chmod a+x standard-notes
