@@ -188,7 +188,7 @@ echo -e "${yellow}Standard Notes install...${white}"
 cd /usr/share/icons
 wget http://icons.iconarchive.com/icons/papirus-team/papirus-apps/512/standard-notes-icon.png
 cd /usr/local/bin
-wget -O standard-notes https://github.com/standardnotes/app/releases/download/%40standardnotes/desktop%403.198.5/standard-notes-3.198.5-linux-x86_64.AppImage
+wget -O standard-notes https://github.com/standardnotes/app/releases/download/%40standardnotes/desktop%403.201.18/standard-notes-3.201.18-linux-x86_64.AppImage
 chmod a+x standard-notes
 echo "[Desktop Entry]
 Name=Standard Notes
@@ -203,7 +203,7 @@ Enabled=true" > /usr/share/applications/standard-notes.desktop
 ########################################################################
 echo -e "${yellow}AEScrypt install...${white}"
 cd
-wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.3.1-Linux-x86_64.deb
+wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.5.0-Linux-x86_64.deb
 dpkg -i aescrypt_gui-*.deb
 rm aescrypt_gui-*.deb
 ########################################################################
