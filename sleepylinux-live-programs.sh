@@ -45,7 +45,7 @@ apt install -y mc sudo ssh cups printer-driver-cups-pdf gvfs-fuse gvfs-backends 
     libpam-google-authenticator gnome-system-tools wireguard wireguard-tools libreoffice-l10n-hu gnome-online-accounts \
     syncthing qrencode ecryptfs-utils audacious molly-guard kleopatra deluge mpv smplayer \
     obs-studio ffmpeg bleachbit flatpak handbrake gnome-calendar greybird-gtk-theme elementary-xfce-icon-theme adwaita-icon-theme \
-	tango-icon-theme xfwm4-theme-breeze htop btop linux-cpupower cpupower-gui onionshare fastfetch birdtray
+	tango-icon-theme xfwm4-theme-breeze htop btop linux-cpupower cpupower-gui onionshare fastfetch birdtray git
 ########################################################################
 echo -e "${yellow}LocalSend install...${white}"
 wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
