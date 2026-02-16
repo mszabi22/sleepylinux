@@ -65,7 +65,7 @@ echo -e "${yellow}Admin Tools telepítése...${white}"
 	cd /opt
 	mkdir winbox
 	cd winbox
-	wget https://download.mikrotik.com/routeros/winbox/4.0rc1/WinBox_Linux.zip
+	wget https://download.mikrotik.com/routeros/winbox/4.0.1/WinBox_Linux.zip
 	unzip WinBox_Linux.zip
 	ln -s /opt/winbox/WinBox /usr/local/bin/winbox
 	ln -s /opt/winbox/assets/img/winbox.png /usr/share/icons/winbox.png
@@ -191,7 +191,7 @@ chmod a+x standard-notes
 echo "[Desktop Entry]
 Name=Standard Notes
 Exec=/usr/local/bin/standard-notes
-Icon=/usr/share/icons/standard-notes-icon.png
+Icon=/usr/share/icons/standard-notes.png
 
 Encoding=UTF-8
 ExecutionMode=normal
