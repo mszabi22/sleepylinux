@@ -230,4 +230,7 @@ echo -e "${yellow}LibreOffice eltávolítása...${white}"
 sudo apt remove --purge libreoffice-*
 sudo apt autoremove
 sudo apt clean
+echo -e "${yellow}root passwd...${white}"
+passwd
+
 echo "Új LibreOffice install!!!"
