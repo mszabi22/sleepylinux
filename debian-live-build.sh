@@ -27,6 +27,5 @@ lb build
 
 
 ### Módosítás ###
-lb chroot
-# Kilépés  után:
 lb clean --binary
+lb build
