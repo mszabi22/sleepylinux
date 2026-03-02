@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-WORKDIR="CL-SZMP"
-ISO_NAME="CiszterciLinux"
+WORKDIR="SleepyLinuxP"
+ISO_NAME="SleepyLinux"
 
 apt-get update
 apt-get install -y live-build curl wget gnupg
@@ -22,7 +22,7 @@ lb config noauto \
   --debian-installer none \
   --archive-areas "main contrib non-free non-free-firmware" \
   --debootstrap-options "--variant=minbase" \
-  --bootappend-live "boot=live username=live persistence components hostname=CiszterciLinux locales=hu_HU.UTF-8 keyboard-layouts=hu timezone=Europe/Budapest" \
+  --bootappend-live "boot=live username=live persistence components hostname=SleepyLinux locales=hu_HU.UTF-8 keyboard-layouts=hu timezone=Europe/Budapest" \
   --image-name "$ISO_NAME" \
   --iso-application "$ISO_NAME" \
   --iso-publisher "Sleepy.hu" \
@@ -161,33 +161,11 @@ dpkg -i veracrypt-1.26.24-Debian-13-amd64.deb || apt -f install -y
 echo "%sudo ALL=(ALL) NOPASSWD:/usr/bin/veracrypt" > /etc/sudoers.d/veracrypt
 chmod 440 /etc/sudoers.d/veracrypt
 
-# Samba share
-mkdir -p /home/scan
-chmod 2775 /home/scan
-groupadd -f smbshare
-chgrp smbshare /home/scan
-chgrp -R smbshare /home/scan
-chmod 2775 /home/scan
-useradd -M -s /usr/sbin/nologin scan
-usermod -aG smbshare scan
-
-
-cat >> /etc/samba/smb.conf <<SAMBA
-
-[scan]
-   path = /home/scan
-   writable = yes
-   guest ok = yes
-   force create mode = 775
-   force directory mode = 775
-SAMBA
-
 # Live user
 id -u live >/dev/null 2>&1 || useradd -m -s /bin/bash -G audio,cdrom,dip,floppy,video,plugdev,netdev,sudo live
 echo "live:live" | chpasswd
 chmod 700 /home/live
 chown -R live:live /home/live
-
 
 echo "== FULL BUILD DONE =="
 EOF
