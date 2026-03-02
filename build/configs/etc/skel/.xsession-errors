@@ -1,0 +1,36 @@
+Xsession: X session started for oem at 2024. jan. 24., szerda, 07:59:31 CET
+dbus-update-activation-environment: setting DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+dbus-update-activation-environment: setting DISPLAY=:0
+dbus-update-activation-environment: setting XAUTHORITY=/home/oem/.Xauthority
+dbus-update-activation-environment: setting XDG_CURRENT_DESKTOP=XFCE
+localuser:oem being added to access control list
+dbus-update-activation-environment: setting XDG_DATA_DIRS=/usr/share/xfce4:/usr/local/share/:/usr/share/
+dbus-update-activation-environment: setting GTK_MODULES=gail:atk-bridge
+dbus-update-activation-environment: setting QT_ACCESSIBILITY=1
+/usr/bin/startxfce4: X server already running on display :0
+/usr/bin/iceauth:  creating new authority file /run/user/1000/ICEauthority
+xfce4-session-Message: 07:59:31.987: SSH authentication agent is already running
+
+(xfwm4:962): xfwm4-WARNING **: 07:59:34.741: Unsupported GL renderer (llvmpipe (LLVM 15.0.6, 256 bits)).
+
+** (xiccd:1019): WARNING **: 07:59:36.635: EDID is empty
+
+** (light-locker:1041): WARNING **: 07:59:37.502: screensaver already running in this session
+
+** (wrapper-2.0:1092): WARNING **: 07:59:37.997: No outputs have backlight property
+
+(xfce4-power-manager:1016): xfce4-power-manager-WARNING **: 07:59:38.931: could not map keysym 1008ffa8 to keycode
+
+
+** (xfce4-power-manager:1016): WARNING **: 07:59:39.015: No outputs have backlight property
+
+(xfce4-power-manager:1016): xfce4-power-manager-WARNING **: 07:59:39.051: Failed to get keyboard max brightness level : GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: Az objektum nem létezik a(z) „/org/freedesktop/UPower/KbdBacklight” útvonalon
+
+(wrapper-2.0:996): Gtk-WARNING **: 07:59:39.623: Negative content width -4 (allocation 16, extents 10x10) while allocating gadget (node button, owner PlacesButton)
+
+(nm-applet:1039): Gdk-CRITICAL **: 07:59:39.670: gdk_window_thaw_toplevel_updates: assertion 'window->update_and_descendants_freeze_count > 0' failed
+blueman-applet 07.59.40 WARNING  PluginManager:151 __load_plugin: Not loading PPPSupport because its conflict has higher priority
+blueman-applet 07.59.40 WARNING  PluginManager:151 __load_plugin: Not loading DhcpClient because its conflict has higher priority
+blueman-applet 07.59.56 WARNING  DiscvManager:119 update_menuitems: warning: Adapter is None
+exo-desktop-item-edit: "file:///usr/share/applications/signal-desktop.desktop" is not writeable, saving to "/home/oem/.local/share/applications/signal-desktop.desktop" instead.
+exo-desktop-item-edit: "file:///usr/share/applications/element-desktop.desktop" is not writeable, saving to "/home/oem/.local/share/applications/element-desktop.desktop" instead.
