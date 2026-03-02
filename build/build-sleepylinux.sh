@@ -207,44 +207,50 @@ SSH
 echo "auth required pam_google_authenticator.so" >> /etc/pam.d/sshd
 ssh-keygen -A
 
+# # #
 # Brave
 curl -fsSLo /usr/share/keyrings/brave.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave.gpg] https://brave-browser-apt-release.s3.brave.com stable main" > /etc/apt/sources.list.d/brave.list
 apt update
 apt install -y brave-browser
 
+# # #
 # Signal
 wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > /usr/share/keyrings/signal.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal.gpg] https://updates.signal.org/desktop/apt xenial main" > /etc/apt/sources.list.d/signal.list
 apt update
 apt install -y signal-desktop
 
+# # #
 # TeamViewer
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 dpkg -i teamviewer_amd64.deb || apt -f install -y
 rm teamviewer_amd64.deb
 
+# # #
 # AEScrypt install
 wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.5.0-Linux-x86_64.deb
 dpkg -i aescrypt_gui-*.deb
 rm aescrypt_gui-*.deb
 
+# # #
 # VeraCrypt (Debian 13 = Trixie)
 wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-13-amd64.deb
 dpkg -i veracrypt-1.26.24-Debian-13-amd64.deb || apt -f install -y
-
 echo "%sudo ALL=(ALL) NOPASSWD:/usr/bin/veracrypt" > /etc/sudoers.d/veracrypt
 chmod 440 /etc/sudoers.d/veracrypt
+rm -rf veracrypt-*
 
+# # #
 # Live user
 id -u live >/dev/null 2>&1 || useradd -m -s /bin/bash -G audio,cdrom,dip,floppy,video,plugdev,netdev,sudo live
 echo "live:live" | chpasswd
 chmod 700 /home/live
 chown -R live:live /home/live
 
+# # #
 echo "== FULL BUILD DONE =="
 EOF
-
 chmod +x config/hooks/normal/999-full.hook.chroot
 
 echo
