@@ -205,6 +205,7 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 SSH
 
 echo "auth required pam_google_authenticator.so" >> /etc/pam.d/sshd
+ssh-keygen -A
 
 # Brave
 curl -fsSLo /usr/share/keyrings/brave.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
