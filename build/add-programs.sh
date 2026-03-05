@@ -114,4 +114,6 @@ Enabled=true" > /usr/share/applications/standard-notes.desktop
 echo -e "${yellow}root passwd...${white}"
 passwd
 
+echo -e "${yellow}LIVE user sync!?${white}"
+
 
