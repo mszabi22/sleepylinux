@@ -234,13 +234,6 @@ dpkg -i aescrypt_gui-*.deb
 rm aescrypt_gui-*.deb
 
 # # #
-# LocalSend
-wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
-dpkg -i LocalSend-1.17.0-linux-x86-64.deb
-apt-get -f install -y
-rm LocalSend-1.17.0-linux-x86-64.deb        
-
-# # #
 # VeraCrypt (Debian 13 = Trixie)
 wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-13-amd64.deb
 dpkg -i veracrypt-1.26.24-Debian-13-amd64.deb || apt -f install -y

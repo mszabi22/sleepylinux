@@ -60,6 +60,13 @@ Enabled=true" > /usr/share/applications/winbox.desktop
 	
 fi
 ########################################################################
+echo -e "${yellow}LocalSend install...${white}"
+wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
+dpkg -i LocalSend-1.17.0-linux-x86-64.deb
+apt-get -f install -y
+rm LocalSend-1.17.0-linux-x86-64.deb        
+
+########################################################################
 echo -e "${yellow}Tor Browser install...${white}"
 sudo apt install jq -y
 TOR_VERZIO="$(curl -s https://aus1.torproject.org/torbrowser/update_3/release/downloads.json | jq -r ".version")"
