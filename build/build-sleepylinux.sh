@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-WORKDIR="SleepyLinuxP"
+WORKDIR="SleepyLinux"
 ISO_NAME="SleepyLinux"
 
 apt-get update
@@ -102,7 +102,6 @@ krita
 krita-l10n
 
 nfs-common
-veyon-service
 
 bash-completion
 screen
@@ -146,6 +145,7 @@ handbrake
 deluge
 syncthing
 qrencode
+qreator
 ecryptfs-utils
 tor
 ffmpeg
@@ -232,6 +232,13 @@ rm teamviewer_amd64.deb
 wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.5.0-Linux-x86_64.deb
 dpkg -i aescrypt_gui-*.deb
 rm aescrypt_gui-*.deb
+
+# # #
+# LocalSend
+wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
+dpkg -i LocalSend-1.17.0-linux-x86-64.deb
+apt-get -f install -y
+rm LocalSend-1.17.0-linux-x86-64.deb        
 
 # # #
 # VeraCrypt (Debian 13 = Trixie)
