@@ -114,6 +114,9 @@ Enabled=true" > /usr/share/applications/standard-notes.desktop
 echo -e "${yellow}root passwd...${white}"
 passwd
 
-echo -e "${yellow}LIVE user sync!?${white}"
+echo -e "${yellow}LIVE user sync...${white}"
+rsync -avz --delete /etc/skel/ /home/live/
+chown -R live:live /home/live/
+
 
 
