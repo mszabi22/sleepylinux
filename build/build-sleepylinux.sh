@@ -5,7 +5,7 @@ WORKDIR="SleepyLinuxP"
 ISO_NAME="SleepyLinux"
 
 apt-get update
-apt-get install -y live-build curl wget gnupg
+apt-get install -y live-build curl wget gnupg  shim-signed grub-efi-amd64-signed
 
 rm -rf $WORKDIR
 mkdir $WORKDIR
@@ -28,7 +28,9 @@ lb config noauto \
   --iso-publisher "Sleepy.hu" \
   --iso-volume "$ISO_NAME" \
   --memtest none \
-  --interactive shell
+  --interactive shell \
+  --bootloaders grub-efi \
+  --uefi-secure-boot enable
 
 mkdir -p config/package-lists
 
