@@ -28,9 +28,7 @@ lb config noauto \
   --iso-publisher "Sleepy.hu" \
   --iso-volume "$ISO_NAME" \
   --memtest none \
-  --interactive shell \
-  --bootloaders grub-efi \
-  --uefi-secure-boot enable
+  --interactive shell 
 
 mkdir -p config/package-lists
 
