@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-WORKDIR="SleepyLinuxP"
+WORKDIR="SleepyLinux"
 ISO_NAME="SleepyLinux"
 
 apt-get update
@@ -104,7 +104,6 @@ krita
 krita-l10n
 
 nfs-common
-veyon-service
 
 bash-completion
 screen
@@ -148,6 +147,7 @@ handbrake
 deluge
 syncthing
 qrencode
+qreator
 ecryptfs-utils
 tor
 ffmpeg
@@ -266,6 +266,7 @@ echo
 lb build
 
 echo
+DATUM=`date +%Y.%m.%d`; mv SleepyLinux-amd64.hybrid.iso SleepyLinux-$DATUM-amd64.iso; md5sum SleepyLinux-$DATUM-amd64.iso > SleepyLinux-$DATUM-amd64.iso.md5; chown -R majorsza:majorsza SleepyLinux-*
 echo "ISO kész:"
 ls -lh *.iso
 
