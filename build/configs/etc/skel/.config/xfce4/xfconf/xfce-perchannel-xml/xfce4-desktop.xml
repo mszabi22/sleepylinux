@@ -9,9 +9,9 @@
         <property name="color2" type="empty"/>
         <property name="color-style" type="int" value="1"/>
         <property name="image-style" type="int" value="5"/>
-        <property name="image-path" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+        <property name="image-path" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+        <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         <property name="last-single-image" type="empty"/>
       </property>
       
@@ -22,7 +22,7 @@
         <property name="color-style" type="empty"/>
         <property name="image-path" type="empty"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+        <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         <property name="last-single-image" type="empty"/>
       </property>
 
@@ -33,7 +33,7 @@
         <property name="color-style" type="empty"/>
         <property name="image-path" type="empty"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+        <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         <property name="last-single-image" type="empty"/>
       </property>
 
@@ -44,7 +44,7 @@
         <property name="color-style" type="empty"/>
         <property name="image-path" type="empty"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+        <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         <property name="last-single-image" type="empty"/>
       </property>
 
@@ -53,22 +53,22 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         </property>
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         </property>
         <property name="workspace3" type="empty">
           <property name="color-style" type="int" value="1"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/backgrounds/xfce/background.svg"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         </property>
       </property>
       

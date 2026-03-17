@@ -2,14 +2,56 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Terminál nyitása itt</name>
+	<name>Open Terminal Here</name>
 	<submenu></submenu>
-	<unique-id>1704881394976999-1</unique-id>
+	<unique-id>1760086141126198-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
-	<description>Példa egyéni műveletre</description>
+	<description>Example for a custom action</description>
 	<range></range>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
+</action>
+<action>
+	<icon>kleopatra</icon>
+	<name>Kleopatra</name>
+	<submenu></submenu>
+	<unique-id>1760534326535085-2</unique-id>
+	<command>kleopatra -e %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>locked</icon>
+	<name>kleopatra decrypt</name>
+	<submenu></submenu>
+	<unique-id>1769695574675995-1</unique-id>
+	<command>kleopatra -d %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*.gpg</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>aescrypt_lock</icon>
+	<name>aescrypt</name>
+	<submenu></submenu>
+	<unique-id>1770973687391180-1</unique-id>
+	<command>aescrypt-gui %n</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 </actions>
