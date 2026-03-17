@@ -62,8 +62,7 @@ fi
 ########################################################################
 echo -e "${yellow}LocalSend install...${white}"
 wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb
-dpkg -i LocalSend-1.17.0-linux-x86-64.deb
-apt-get -f install -y
+dpkg -i LocalSend-1.17.0-linux-x86-64.deb || apt-get -f install -y
 rm LocalSend-1.17.0-linux-x86-64.deb        
 
 ########################################################################
@@ -121,9 +120,9 @@ Enabled=true" > /usr/share/applications/standard-notes.desktop
 echo -e "${yellow}root passwd...${white}"
 passwd
 
-echo -e "${yellow}LIVE user sync...${white}"
-rsync -avz --delete /etc/skel/ /home/live/
-chown -R live:live /home/live/
+#echo -e "${yellow}LIVE user sync...${white}"
+#rsync -avz --delete /etc/skel/ /home/live/
+#chown -R live:live /home/live/
 
 
 

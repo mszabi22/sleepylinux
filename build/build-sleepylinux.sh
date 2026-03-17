@@ -243,10 +243,10 @@ rm -rf veracrypt-*
 
 # # #
 # Live user
-id -u live >/dev/null 2>&1 || useradd -m -s /bin/bash -G audio,cdrom,dip,floppy,video,plugdev,netdev,sudo live
-echo "live:live" | chpasswd
-chmod 700 /home/live
-chown -R live:live /home/live
+#id -u live >/dev/null 2>&1 || useradd -m -s /bin/bash -G audio,cdrom,dip,floppy,video,plugdev,netdev,sudo live
+#echo "live:live" | chpasswd
+#chmod 700 /home/live
+#chown -R live:live /home/live
 
 # # #
 echo "== FULL BUILD DONE =="
