@@ -124,5 +124,5 @@ passwd
 #rsync -avz --delete /etc/skel/ /home/live/
 #chown -R live:live /home/live/
 
-
+#rm /etc/debian_chroot
 
