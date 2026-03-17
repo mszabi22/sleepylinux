@@ -1,3 +1,3 @@
-deb https://mirror.sleepy.hu/debian stable main contrib non-free non-free-firmware
-deb https://mirror.sleepy.hu/debian-security stable-security main contrib non-free non-free-firmware
-deb-src http://mirror.sleepy.hu/debian stable-backports main non-free-firmware
+deb https://mirror.sleepy.hu/debian trixie main contrib non-free non-free-firmware
+deb https://mirror.sleepy.hu/debian-security trixie-security main contrib non-free non-free-firmware
+deb-src http://mirror.sleepy.hu/debian trixie-backports main non-free-firmware
