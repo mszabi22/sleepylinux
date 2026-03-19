@@ -77,6 +77,9 @@ eog
 imagemagick
 zstd
 
+firefox-esr
+firefox-esr-l10n-hu
+
 menulibre
 alacarte
 mugshot
