@@ -231,6 +231,7 @@ deb https://ftp.debian.org/debian trixie-backports main contrib non-free non-fre
 #deb https://mirror.sleepy.hu/debian trixie-updates main contrib non-free non-free-firmware
 #deb https://mirror.sleepy.hu/debian trixie-backports main contrib non-free non-free-firmware
 #deb https://mirror.sleepy.hu/debian-security trixie-security main contrib non-free non-free-firmware
+#deb https://mirror.sleepy.hu/signal xenial main
 REPO
 
 apt update
