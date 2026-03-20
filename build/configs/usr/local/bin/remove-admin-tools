@@ -6,5 +6,4 @@ sudo apt remove --purge gprename gparted netdiscover sshuttle grub-customizer re
 sudo rm -rf /usr/local/bin/WinBox
 sudo rm -rf /usr/local/bin/assets
 sudo rm -rf /usr/share/applications/winbox.desktop
-sudo rm -rf /usr/share/applications/winbox.desktop
 
