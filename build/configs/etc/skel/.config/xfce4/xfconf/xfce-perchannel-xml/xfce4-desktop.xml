@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8"?>
 
 <channel name="xfce4-desktop" version="1.0">
   <property name="backdrop" type="empty">
@@ -7,14 +7,12 @@
         <property name="brightness" type="empty"/>
         <property name="color1" type="empty"/>
         <property name="color2" type="empty"/>
-        <property name="color-style" type="int" value="1"/>
-        <property name="image-style" type="int" value="5"/>
-        <property name="image-path" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
+        <property name="color-style" type="empty"/>
+        <property name="image-path" type="empty"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
+        <property name="last-image" type="empty"/>
         <property name="last-single-image" type="empty"/>
       </property>
-      
       <property name="monitor1" type="empty">
         <property name="brightness" type="empty"/>
         <property name="color1" type="empty"/>
@@ -22,10 +20,9 @@
         <property name="color-style" type="empty"/>
         <property name="image-path" type="empty"/>
         <property name="image-show" type="empty"/>
-        <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
+        <property name="last-image" type="empty"/>
         <property name="last-single-image" type="empty"/>
       </property>
-
       <property name="monitorHDMI-1" type="empty">
         <property name="brightness" type="empty"/>
         <property name="color1" type="empty"/>
@@ -36,7 +33,6 @@
         <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         <property name="last-single-image" type="empty"/>
       </property>
-
       <property name="monitorrdp0" type="empty">
         <property name="brightness" type="empty"/>
         <property name="color1" type="empty"/>
@@ -47,8 +43,6 @@
         <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         <property name="last-single-image" type="empty"/>
       </property>
-
-
       <property name="monitorVirtual1" type="empty">
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="1"/>
@@ -71,14 +65,25 @@
           <property name="last-image" type="string" value="/usr/share/images/desktop-base/desktop-grub.png"/>
         </property>
       </property>
-      
+      <property name="monitorVirtual-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/default"/>
+        </property>
+      </property>
     </property>
   </property>
   <property name="desktop-icons" type="empty">
     <property name="icon-size" type="uint" value="34"/>
+    <property name="file-icons" type="empty">
+      <property name="migrated-4.19" type="array">
+        <value type="string" value="abfb9c8813957ba56a06ac1f0133da569ae08c54"/>
+      </property>
+    </property>
+    <property name="confirm-sorting" type="bool" value="false"/>
   </property>
   <property name="last" type="empty">
     <property name="window-width" type="int" value="767"/>
     <property name="window-height" type="int" value="566"/>
   </property>
+  <property name="last-settings-migration-version" type="uint" value="1"/>
 </channel>

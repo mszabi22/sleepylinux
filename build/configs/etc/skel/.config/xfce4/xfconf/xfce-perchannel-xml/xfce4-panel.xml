@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.1" encoding="UTF-8"?>
 
 <channel name="xfce4-panel" version="1.0">
   <property name="configver" type="int" value="2"/>
@@ -9,7 +9,7 @@
       <property name="position" type="string" value="p=8;x=512;y=754"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="icon-size" type="uint" value="0"/>
+      <property name="icon-size" type="uint" value="35"/>
       <property name="size" type="uint" value="35"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
@@ -76,7 +76,22 @@
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-1" type="string" value="whiskermenu"/>
+    <property name="plugin-1" type="string" value="whiskermenu">
+      <property name="button-icon" type="string" value="/usr/share/icons/sleepyhu_startmenu_white.png"/>
+      <property name="launcher-show-description" type="bool" value="false"/>
+      <property name="launcher-show-tooltip" type="bool" value="false"/>
+      <property name="category-icon-size" type="int" value="2"/>
+      <property name="recent-items-max" type="int" value="0"/>
+      <property name="position-categories-alternate" type="bool" value="true"/>
+      <property name="menu-height" type="int" value="638"/>
+      <property name="favorites" type="array">
+        <value type="string" value="brave-browser.desktop"/>
+        <value type="string" value="signal-desktop.desktop"/>
+        <value type="string" value="org.keepassxc.KeePassXC.desktop"/>
+      </property>
+      <property name="recent" type="array">
+      </property>
+    </property>
     <property name="plugin-7" type="string" value="xkb"/>
     <property name="plugin-15" type="string" value="places"/>
   </property>
