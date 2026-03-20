@@ -117,12 +117,9 @@ Type=Application
 Categories=Office;
 Enabled=true" > /usr/share/applications/standard-notes.desktop
 ########################################################################
-echo -e "${yellow}root passwd...${white}"
-passwd
-
-#echo -e "${yellow}LIVE user sync...${white}"
-#rsync -avz --delete /etc/skel/ /home/live/
-#chown -R live:live /home/live/
-
+cp /usr/share/images/desktop-base/desktop-grub.png /usr/share/plymouth/themes/sleepyhu/desktop-grub.png
+cp /usr/share/images/desktop-base/desktop-grub.png /boot/grub/sleepyhu-grub.png
 rm /etc/debian_chroot
+rm /root/add-programs.sh
+history -c
 
