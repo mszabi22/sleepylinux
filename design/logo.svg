@@ -9,10 +9,33 @@
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs62" />
+     id="defs62">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#2c3d57;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#2c3d57;stop-opacity:0;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="23.370909"
+       y1="466.46863"
+       x2="461.88773"
+       y2="466.46863"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <sodipodi:namedview
      id="namedview62"
      pagecolor="#ffffff"
@@ -23,8 +46,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.53033009"
-     inkscape:cx="933.38094"
-     inkscape:cy="509.11688"
+     inkscape:cx="478.94699"
+     inkscape:cy="328.09754"
      inkscape:window-width="1920"
      inkscape:window-height="1013"
      inkscape:window-x="0"
@@ -155,4 +178,18 @@
   <!-- Scroll wheel -->
   <!-- ======== COMMUNITY ICONS ======== -->
   <!-- ======== TITLE TEXT ======== -->
+  <text
+     x="241.64162"
+     y="485.06555"
+     font-family="monospace"
+     font-size="54.671px"
+     font-weight="bold"
+     fill="none"
+     stroke="#5ac87a"
+     stroke-width="1.36677"
+     text-anchor="middle"
+     letter-spacing="8"
+     id="text60"
+     transform="scale(1.0297408,0.97111817)"
+     style="stroke:#2c3d57;stroke-width:1.367;stroke-dasharray:none;stroke-opacity:1">SleepyLinux</text>
 </svg>
