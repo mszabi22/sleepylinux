@@ -32,10 +32,3 @@
 <ins>Config tools:</ins>
 - Winbox
 - Active Directory member support script
-
-## <ins>Method of preparation:</ins>
-1. Run debian-live-build.sh
-2. Copy to chroot: debian-live-programs.sh, etc, usr/local/bin
-3. Run debian-live-programs.sh
-
-
