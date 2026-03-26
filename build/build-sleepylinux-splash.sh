@@ -202,6 +202,7 @@ mkdir -p config/includes.chroot/etc/default/grub.d
 cat > config/includes.chroot/etc/default/grub.d/99-sleepyhu.cfg <<EOF
 GRUB_BACKGROUND="/boot/grub/sleepyhu-grub.png"
 GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="SleepyLinux"
 EOF
 
 # GRUB háttérkép a LIVE ISO bootloaderhez
