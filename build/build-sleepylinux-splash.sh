@@ -212,6 +212,15 @@ mkdir -p config/bootloaders/grub-pc
 # CHROOT HOOK
 mkdir -p config/hooks/normal
 
+cat > config/hooks/normal/999-grub-title.hook.binary <<'EOF'
+#!/bin/bash
+set -e
+# GRUB menüpont átnevezése Debian -> CiszterciLinux
+sed -i 's/Debian GNU\/Linux/SleepyLinux/g' binary/boot/grub/grub.cfg
+EOF
+chmod +x config/hooks/normal/999-grub-title.hook.binary
+
+
 cat > config/hooks/normal/999-full.hook.chroot <<'EOF'
 #!/bin/bash
 set -e
