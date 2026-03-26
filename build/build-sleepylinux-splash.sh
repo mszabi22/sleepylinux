@@ -213,15 +213,6 @@ mkdir -p config/bootloaders/grub-pc
 # CHROOT HOOK
 mkdir -p config/hooks/normal
 
-cat > config/hooks/normal/999-grub-title.hook.binary <<'EOF'
-#!/bin/bash
-set -e
-# GRUB menüpont átnevezése Debian -> CiszterciLinux
-sed -i 's/Debian GNU\/Linux/SleepyLinux/g' binary/boot/grub/grub.cfg
-EOF
-chmod +x config/hooks/normal/999-grub-title.hook.binary
-
-
 cat > config/hooks/normal/999-full.hook.chroot <<'EOF'
 #!/bin/bash
 set -e
@@ -309,6 +300,11 @@ if [ -f /usr/share/images/desktop-base/desktop-grub.png ]; then
   cp /usr/share/images/desktop-base/desktop-grub.png \
      /boot/grub/sleepyhu-grub.png
 fi
+# GRUB menüpont átnevezése Debian -> CiszterciLinux
+if [ -f /boot/grub/grub.cfg ]; then
+  sed -i 's/Debian GNU\/Linux/SleepyLinux/g' /boot/grub/grub.cfg
+  sed -i 's/Live system/SleepyLinux Live/g' /boot/grub/grub.cfg
+fi
 plymouth-set-default-theme sleepyhu
 update-initramfs -u
 
@@ -345,3 +341,7 @@ ls -lh *.iso
 #sudo chroot chroot /bin/bash
 #lb clean --binary
 #lb binary
+
+# ha csak az ISO-t kell:
+# rm .build/binary_iso
+# lb binary_iso
