@@ -340,6 +340,7 @@ ls -lh *.iso
 ### javítás: ###
 #sudo chroot chroot /bin/bash
 #lb clean --binary
+#rm /DATA/LIVE/SleepyLinux/chroot/etc/debian_chroot*
 #lb binary
 
 # ha csak az ISO-t kell:
