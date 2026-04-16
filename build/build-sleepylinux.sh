@@ -161,6 +161,7 @@ tango-icon-theme
 xfwm4-theme-breeze
 
 gocryptfs
+stress-ng
 EOF
 
 # autologin
