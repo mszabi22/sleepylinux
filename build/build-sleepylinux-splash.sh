@@ -161,6 +161,8 @@ tango-icon-theme
 xfwm4-theme-breeze
 
 gocryptfs
+stress-ng
+lm-sensors
 EOF
 
 # autologin
@@ -222,18 +224,16 @@ echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select t
 
 # repo
 cat > /etc/apt/sources.list <<REPO
-deb https://ftp.debian.org/debian trixie main contrib non-free non-free-firmware
-deb https://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
-deb https://ftp.debian.org/debian trixie-updates main contrib non-free non-free-firmware
-deb https://ftp.debian.org/debian trixie-backports main contrib non-free non-free-firmware
+#deb https://ftp.debian.org/debian trixie main contrib non-free non-free-firmware
+#deb https://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+#deb https://ftp.debian.org/debian trixie-updates main contrib non-free non-free-firmware
+#deb https://ftp.debian.org/debian trixie-backports main contrib non-free non-free-firmware
 
 # # # Sleepy.hu MIRROR
-#deb https://mirror.sleepy.hu/debian trixie main contrib non-free non-free-firmware
-#deb https://mirror.sleepy.hu/debian trixie-updates main contrib non-free non-free-firmware
-#deb https://mirror.sleepy.hu/debian trixie-backports main contrib non-free non-free-firmware
-#deb https://mirror.sleepy.hu/debian-security trixie-security main contrib non-free non-free-firmware
-#deb https://mirror.sleepy.hu/signal xenial main
-#deb https://mirror.sleepy.hu/brave stable main
+deb https://mirror.sleepy.hu/debian trixie main contrib non-free non-free-firmware
+deb https://mirror.sleepy.hu/debian trixie-updates main contrib non-free non-free-firmware
+deb https://mirror.sleepy.hu/debian trixie-backports main contrib non-free non-free-firmware
+deb https://mirror.sleepy.hu/debian-security trixie-security main contrib non-free non-free-firmware
 REPO
 
 apt update
