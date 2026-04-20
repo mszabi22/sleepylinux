@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-WORKDIR="SleepyLinux"
+WORKDIR="/DATA/LIVE/SleepyLinux"
 ISO_NAME="SleepyLinux"
 
 apt-get update
@@ -164,6 +164,9 @@ gocryptfs
 stress-ng
 lm-sensors
 EOF
+
+mkdir -p /DATA/LIVE/SleepyLinux/config/bootloaders/grub-pc
+cp /home/majorsza/forgejo/sleepylinux/design/splash.png /DATA/LIVE/SleepyLinux/config/bootloaders/grub-pc/
 
 # autologin
 mkdir -p config/includes.chroot/etc/lightdm/lightdm.conf.d
