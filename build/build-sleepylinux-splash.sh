@@ -288,11 +288,16 @@ rm aescrypt_gui-*.deb
 
 # # #
 # VeraCrypt (Debian 13 = Trixie)
-wget https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-13-amd64.deb
-dpkg -i veracrypt-1.26.24-Debian-13-amd64.deb || apt -f install -y
-echo "%sudo ALL=(ALL) NOPASSWD:/usr/bin/veracrypt" > /etc/sudoers.d/veracrypt
-chmod 440 /etc/sudoers.d/veracrypt
-rm -rf veracrypt-*
+VERACRYPT_URL="https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-13-amd64.deb"
+VERACRYPT_DEB="veracrypt-1.26.24-Debian-13-amd64.deb"
+if wget --tries=3 --timeout=30 -O "$VERACRYPT_DEB" "$VERACRYPT_URL"; then
+  dpkg -i "$VERACRYPT_DEB" || apt -f install -y
+  echo "%sudo ALL=(ALL) NOPASSWD:/usr/bin/veracrypt" > /etc/sudoers.d/veracrypt
+  chmod 440 /etc/sudoers.d/veracrypt
+  rm -f "$VERACRYPT_DEB"
+else
+  echo "FIGYELEM: VeraCrypt letöltése sikertelen, kihagyva."
+fi
 
 # # #
 # Plymouth téma aktiválása + GRUB háttérkép (telepített rendszerhez)
