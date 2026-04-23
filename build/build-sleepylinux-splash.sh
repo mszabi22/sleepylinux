@@ -281,6 +281,13 @@ dpkg -i teamviewer_amd64.deb || apt -f install -y
 rm teamviewer_amd64.deb
 
 # # #
+# AGE crypt
+AGE_VER=1.3.1
+curl -LO https://github.com/FiloSottile/age/releases/download/v${AGE_VER}/age-v${AGE_VER}-linux-amd64.tar.gz
+tar xzf age-v${AGE_VER}-linux-amd64.tar.gz
+sudo install -m 0755 age/age age/age-keygen /usr/local/bin/
+
+# # #
 # VeraCrypt (Debian 13 = Trixie)
 VERACRYPT_URL="https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-13-amd64.deb"
 VERACRYPT_DEB="veracrypt-1.26.24-Debian-13-amd64.deb"
