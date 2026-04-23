@@ -281,12 +281,6 @@ dpkg -i teamviewer_amd64.deb || apt -f install -y
 rm teamviewer_amd64.deb
 
 # # #
-# AEScrypt install
-wget https://www.aescrypt.com/download/v4/linux/aescrypt_gui-4.5.0-Linux-x86_64.deb
-dpkg -i aescrypt_gui-*.deb
-rm aescrypt_gui-*.deb
-
-# # #
 # VeraCrypt (Debian 13 = Trixie)
 VERACRYPT_URL="https://launchpad.net/veracrypt/trunk/1.26.24/+download/veracrypt-1.26.24-Debian-13-amd64.deb"
 VERACRYPT_DEB="veracrypt-1.26.24-Debian-13-amd64.deb"
