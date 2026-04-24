@@ -22,7 +22,6 @@
 
 <ins>Encryption/Secure tools:</ins>
 - GnuPG GUI (Kleopatra)
-- AEScrypt
 - VeraCrypt
 - Syncthing
 
