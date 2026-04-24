@@ -286,6 +286,7 @@ AGE_VER=1.3.1
 curl -LO https://github.com/FiloSottile/age/releases/download/v${AGE_VER}/age-v${AGE_VER}-linux-amd64.tar.gz
 tar xzf age-v${AGE_VER}-linux-amd64.tar.gz
 sudo install -m 0755 age/age age/age-keygen /usr/local/bin/
+rm age-v${AGE_VER}-linux-amd64.tar.gz
 
 # # #
 # VeraCrypt (Debian 13 = Trixie)
