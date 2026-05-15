@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed -i 's/Live system/SleepyLinux Live/g' /DATA/LIVE/SleepyLinux-KDE/binary/boot/grub/grub.cfg
+sed -i 's/Live system/SleepyLinux Live (KDE)/g' /DATA/LIVE/SleepyLinux-KDE/binary/boot/grub/grub.cfg
 rm /DATA/LIVE/SleepyLinux-KDE/*.iso
 rm /DATA/LIVE/SleepyLinux-KDE/*.md5
 rm /DATA/LIVE/SleepyLinux-KDE/.build/binary_iso
