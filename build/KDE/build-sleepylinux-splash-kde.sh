@@ -79,9 +79,6 @@ zstd
 firefox-esr
 firefox-esr-l10n-hu
 
-menulibre
-alacarte
-mugshot
 keepassxc
 geany
 
@@ -116,18 +113,9 @@ apt-transport-https
 ttf-mscorefonts-installer
 libpam-google-authenticator
 
-gnome-system-tools
-gnome-online-accounts
-gnome-calendar
-
 molly-guard
 kleopatra
 geogebra
-
-polkitd
-pkexec
-dbus-user-session
-accountsservice
 
 htop
 
