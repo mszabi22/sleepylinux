@@ -11,5 +11,7 @@ fi
 source ~/.bash_aliases
 export EDITOR=mcedit
 
+unset QT_IM_MODULE
+unset GTK_IM_MODULE
 
 
